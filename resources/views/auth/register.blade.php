@@ -41,16 +41,16 @@
 
                                     <div class="col-md-8">
                                         <label class="radio-inline">
-                                            <input type="radio" name="academic_position" value="1" required {{ old('academic_position') == '1' ? "checked":"" }}> Dr.
+                                            <input type="radio" name="academic_position" value="1" required {{ old('academic_position') == '1' ? "checked":"" }}> Prof.
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="academic_position" value="2" required {{ old('academic_position') == '2' ? "checked":"" }}> Mr.
+                                            <input type="radio" name="academic_position" value="2" required {{ old('academic_position') == '2' ? "checked":"" }}> Assoc. Prof.
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="academic_position" value="3" required {{ old('academic_position') == '3' ? "checked":"" }}> Ms.
+                                            <input type="radio" name="academic_position" value="3" required {{ old('academic_position') == '3' ? "checked":"" }}> Asst. Prof.
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="academic_position" value="4" required {{ old('academic_position') == '4' ? "checked":"" }}> Mrs.
+                                            <input type="radio" name="academic_position" value="4" required {{ old('academic_position') == '4' ? "checked":"" }}> None
                                         </label>
 
                                         @if ($errors->has('academic_position'))
@@ -82,7 +82,7 @@
                                     <label for="family_name" class="col-md-4 control-label">Family Name</label>
 
                                     <div class="col-md-8">
-                                        <input id="family_name" type="text" class="form-control" family_name="family_name" value="{{ old('family_name') }}" required autofocus>
+                                        <input id="family_name" type="text" class="form-control" name="family_name" value="{{ old('family_name') }}" required autofocus>
 
                                         @if ($errors->has('family_name'))
                                             <span class="help-block">
@@ -125,21 +125,39 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('email') || $errors->has('username') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('mobile') || $errors->has('fax') ? ' has-error' : '' }}">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                                    <label for="mobile" class="col-md-4 control-label">Mobile</label>
 
                                     <div class="col-md-8">
-                                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+                                        <input id="mobile" type="mobile" class="form-control" name="mobile" value="{{ old('mobile') }}" required>
 
-                                        @if ($errors->has('email'))
+                                        @if ($errors->has('mobile'))
                                             <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>{{ $errors->first('mobile') }}</strong>
                                     </span>
                                         @endif
                                     </div>
                                 </div>
+                                <div class="col-md-6">
+                                    <label for="fax" class="col-md-4 control-label">Fax</label>
+
+                                    <div class="col-md-8">
+                                        <input id="fax" type="fax" class="form-control" name="fax" value="{{ old('fax') }}">
+
+                                        @if ($errors->has('fax'))
+                                            <span class="help-block">
+                                        <strong>{{ $errors->first('fax') }}</strong>
+                                    </span>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('email') || $errors->has('username') ? ' has-error' : '' }}">
+                            <div class="row">
                                 <div class="col-md-6">
                                     <label for="username" class="col-md-4 control-label">Username</label>
 
@@ -149,6 +167,19 @@
                                         @if ($errors->has('username'))
                                             <span class="help-block">
                                         <strong>{{ $errors->first('username') }}</strong>
+                                    </span>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+
+                                    <div class="col-md-8">
+                                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+
+                                        @if ($errors->has('email'))
+                                            <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                         @endif
                                     </div>
