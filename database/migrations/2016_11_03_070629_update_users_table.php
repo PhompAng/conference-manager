@@ -22,9 +22,9 @@ class UpdateUsersTable extends Migration
             $table->string('mobile')->after('country');
             $table->string('fax')->nullable()->after('mobile');
             $table->tinyInteger('role')->default(0)->after('remember_token');
-            $table->integer('conferences_id')->unsigned();
+            $table->integer('conference_id')->unsigned();
 
-            $table->foreign('conferences_id')->references('id')->on('conferences')->onDelete('cascade');
+            $table->foreign('conference_id')->references('id')->on('conferences')->onDelete('cascade');
         });
     }
 
