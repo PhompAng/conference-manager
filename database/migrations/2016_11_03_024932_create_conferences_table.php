@@ -16,7 +16,7 @@ class CreateConferencesTable extends Migration
         Schema::create('conferences', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('url');
+            $table->string('url')->unique();
             $table->timestamps();
         });
     }
