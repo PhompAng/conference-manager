@@ -15,6 +15,8 @@
 //    return view('welcome');
 //});
 
-Auth::routes();
 
-Route::get('/', 'HomeController@index');
+Route::group(['prefix' => '{url}'], function () {
+    Auth::routes();
+    Route::get('/', 'HomeController@index');
+});

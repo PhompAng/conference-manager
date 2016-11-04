@@ -6,6 +6,7 @@ use App\Model\Conference;
 use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
@@ -71,7 +72,10 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $conf = Conference::find(1);
+        $prefix = Route::getFacadeRoot()->getCurrentRoute()->parameter('url');
+        $conf = Conference::where('url', $prefix)->first();
+        print_r(Conference::find(1));
+        dd($conf);
         return $conf->users()->create([
             'title' => $data['title'],
             'academic_position' => $data['academic_position'],

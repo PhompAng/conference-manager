@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Register</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('econ1/register') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('title') || $errors->has('academic_position') ? ' has-error' : '' }}">
