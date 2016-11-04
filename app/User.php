@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'title', 'academic_position', 'name', 'family_name', 'affiliation', 'country', 'mobile', 'fax', 'username', 'role', 'email', 'password',
     ];
 
     /**
@@ -26,4 +26,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function conference() {
+        return $this->belongsTo('App\Model\Conference');
+    }
 }
