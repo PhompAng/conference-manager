@@ -13,7 +13,7 @@
                         <div class="form-group{{ $errors->has('title') || $errors->has('academic_position') ? ' has-error' : '' }}">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label for="title" class="col-md-4 control-label">Title</label>
+                                    <label for="title" class="col-md-4 control-label">Title <sup><i class="fa fa-asterisk text-danger" aria-hidden="true"></i></sup></label>
 
                                     <div class="col-md-8">
                                         <label class="radio-inline">
@@ -37,7 +37,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="academic_position" class="col-md-4 control-label">Academic Positions</label>
+                                    <label for="academic_position" class="col-md-4 control-label">Academic Positions <sup><i class="fa fa-asterisk text-danger" aria-hidden="true"></i></sup></label>
 
                                     <div class="col-md-8">
                                         <label class="radio-inline">
@@ -66,7 +66,7 @@
                         <div class="form-group{{ $errors->has('name') || $errors->has('family_name') ? ' has-error' : '' }}">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label for="name" class="col-md-4 control-label">First (and middle) name(s)</label>
+                                    <label for="name" class="col-md-4 control-label">First (and middle) name(s) <sup><i class="fa fa-asterisk text-danger" aria-hidden="true"></i></sup></label>
 
                                     <div class="col-md-8">
                                         <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
@@ -79,7 +79,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="family_name" class="col-md-4 control-label">Family Name</label>
+                                    <label for="family_name" class="col-md-4 control-label">Family Name <sup><i class="fa fa-asterisk text-danger" aria-hidden="true"></i></sup></label>
 
                                     <div class="col-md-8">
                                         <input id="family_name" type="text" class="form-control" name="family_name" value="{{ old('family_name') }}" required autofocus>
@@ -97,7 +97,7 @@
                         <div class="form-group{{ $errors->has('affiliation') || $errors->has('country') ? ' has-error' : '' }}">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label for="affiliation" class="col-md-4 control-label">Affiliation</label>
+                                    <label for="affiliation" class="col-md-4 control-label">Affiliation <sup><i class="fa fa-asterisk text-danger" aria-hidden="true"></i></sup></label>
 
                                     <div class="col-md-8">
                                         <input id="affiliation" type="affiliation" class="form-control" name="affiliation" value="{{ old('affiliation') }}" required>
@@ -110,7 +110,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="country" class="col-md-4 control-label">Country</label>
+                                    <label for="country" class="col-md-4 control-label">Country <sup><i class="fa fa-asterisk text-danger" aria-hidden="true"></i></sup></label>
 
                                     <div class="col-md-8">
                                         <select class="form-control" name="country" required>
@@ -388,7 +388,7 @@
                         <div class="form-group{{ $errors->has('mobile') || $errors->has('fax') ? ' has-error' : '' }}">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label for="mobile" class="col-md-4 control-label">Mobile</label>
+                                    <label for="mobile" class="col-md-4 control-label">Mobile <sup><i class="fa fa-asterisk text-danger" aria-hidden="true"></i></sup></label>
 
                                     <div class="col-md-8">
                                         <input id="mobile" type="mobile" class="form-control" name="mobile" value="{{ old('mobile') }}" required>
@@ -419,7 +419,7 @@
                         <div class="form-group{{ $errors->has('email') || $errors->has('username') ? ' has-error' : '' }}">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label for="username" class="col-md-4 control-label">Username</label>
+                                    <label for="username" class="col-md-4 control-label">Username <sup><i class="fa fa-asterisk text-danger" aria-hidden="true"></i></sup></label>
 
                                     <div class="col-md-8">
                                         <input id="username" type="username" class="form-control" name="username" value="{{ old('username') }}" required>
@@ -432,7 +432,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                                    <label for="email" class="col-md-4 control-label">E-Mail Address <sup><i class="fa fa-asterisk text-danger" aria-hidden="true"></i></sup></label>
 
                                     <div class="col-md-8">
                                         <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
@@ -450,7 +450,7 @@
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label for="password" class="col-md-4 control-label">Password</label>
+                                    <label for="password" class="col-md-4 control-label">Password <sup><i class="fa fa-asterisk text-danger" aria-hidden="true"></i></sup></label>
 
                                     <div class="col-md-8">
                                         <input id="password" type="password" class="form-control" name="password" required>
@@ -463,7 +463,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
+                                    <label for="password-confirm" class="col-md-4 control-label">Confirm Password <sup><i class="fa fa-asterisk text-danger" aria-hidden="true"></i></sup></label>
 
                                     <div class="col-md-8">
                                         <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
@@ -475,7 +475,7 @@
                         <div class="form-group{{ $errors->has('role') ? ' has-error' : '' }}">
                             <div class="row">
                                 <div class="col-sm-6 col-sm-offset-3">
-                                    <label for="role" class="col-md-4 control-label">Login as:</label>
+                                    <label for="role" class="col-md-4 control-label">Login as <sup><i class="fa fa-asterisk text-danger" aria-hidden="true"></i></sup></label>
 
                                     <div class="col-md-8">
                                         <label class="radio-inline">
