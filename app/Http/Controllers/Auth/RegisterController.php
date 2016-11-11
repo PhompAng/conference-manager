@@ -31,6 +31,8 @@ class RegisterController extends Controller
      */
     protected $redirectTo = '/';
 
+    protected static $prefix = '/';
+
     /**
      * Create a new controller instance.
      *
@@ -39,6 +41,7 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+        self::$prefix = Route::getFacadeRoot()->getCurrentRoute()->parameter('url');
     }
 
     /**
@@ -64,6 +67,10 @@ class RegisterController extends Controller
         ]);
     }
 
+//    protected function showRegistrationForm() {
+//
+//    }
+
     /**
      * Create a new user instance after a valid registration.
      *
@@ -72,10 +79,10 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $prefix = Route::getFacadeRoot()->getCurrentRoute()->parameter('url');
-        $conf = Conference::where('url', $prefix)->first();
-        print_r(Conference::find(1));
-        dd($conf);
+
+        $conf = Conference::where('url', self::$prefix)->first();
+//        print_r(Conference::find(1));
+//        dd($conf);
         return $conf->users()->create([
             'title' => $data['title'],
             'academic_position' => $data['academic_position'],
