@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Model\Conference;
 use App\User;
+use Illuminate\Http\Request;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
@@ -31,17 +32,17 @@ class RegisterController extends Controller
      */
     protected $redirectTo = '/';
 
-    protected static $prefix = '/';
+    protected $prefix = '/';
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Request $request)
     {
         $this->middleware('guest');
-        self::$prefix = Route::getFacadeRoot()->getCurrentRoute()->parameter('url');
+        $this->prefix = $request->segment(1);
     }
 
     /**
