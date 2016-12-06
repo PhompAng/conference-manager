@@ -37,12 +37,13 @@ class RegisterController extends Controller
     /**
      * Create a new controller instance.
      *
-     * @return void
+     * @param Request $request
      */
     public function __construct(Request $request)
     {
         $this->middleware('guest');
         $this->prefix = $request->segment(1);
+        $this->redirectTo = $this->prefix;
     }
 
     /**
@@ -100,4 +101,16 @@ class RegisterController extends Controller
             'role' => $data['role'],
         ]);
     }
+
+    /**
+     * Show the application registration form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showRegistrationForm()
+    {
+        return view('auth.register', ['prefix' => $this->prefix]);
+    }
+
+
 }
