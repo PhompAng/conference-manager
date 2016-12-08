@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Author;
 
 use Illuminate\Http\Request;
 use App\Model\Conference;
+use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
@@ -28,6 +29,6 @@ class HomeController extends Controller
     public function index($url=null)
     {
         $conf = Conference::where('url', $this->prefix)->first();
-        return view('home', ["prefix" => $this->prefix, "conf" => $conf]);
+        return view('author.home', ["prefix" => $this->prefix, "menu" => "home", "conf" => $conf ]);
     }
 }

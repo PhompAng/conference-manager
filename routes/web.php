@@ -18,5 +18,5 @@
 
 Route::group(['prefix' => '{url}'], function () {
     Auth::routes();
-    Route::get('/', 'HomeController@index');
+    Route::get('/', 'Author\HomeController@index');
 });

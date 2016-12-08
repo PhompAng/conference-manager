@@ -3,12 +3,23 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-3">
+            <ul class="nav nav-pills nav-stacked">
+                <li role="presentation" class="{{ $menu == "home" ? "active":"" }}"><a href="#">Home</a></li>
+                <li role="presentation" class="{{ $menu == "personal" ? "active":"" }}"><a href="#">Personal Information</a></li>
+                <li role="presentation" class="{{ $menu == "paper" ? "active":"" }}"><a href="#">Paper Submission</a></li>
+                <li role="presentation" class="{{ $menu == "paperList" ? "active":"" }}"><a href="#">Paper List</a></li>
+                <li role="presentation" class="{{ $menu == "camera" ? "active":"" }}"><a href="#">Camera Ready Submission</a></li>
+                <li role="presentation"><a href="#">Logout</a></li>
+            </ul>
+        </div>
+        <div class="col-md-9">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
-
+                <div class="panel-heading">
+                    Home
+                </div>
                 <div class="panel-body">
-                    You are logged in!
+                    @yield('body')
                 </div>
             </div>
         </div>
