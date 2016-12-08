@@ -19,4 +19,6 @@
 Route::group(['prefix' => '{url}'], function () {
     Auth::routes();
     Route::get('/', 'Author\HomeController@index');
+    Route::get('/edit', 'Author\EditController@index');
+    Route::post('/edit', 'Author\EditController@update');
 });

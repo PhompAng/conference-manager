@@ -5,8 +5,8 @@
     <div class="row">
         <div class="col-md-3">
             <ul class="nav nav-pills nav-stacked">
-                <li role="presentation" class="{{ $menu == "home" ? "active":"" }}"><a href="#">Home</a></li>
-                <li role="presentation" class="{{ $menu == "personal" ? "active":"" }}"><a href="#">Personal Information</a></li>
+                <li role="presentation" class="{{ $menu == "home" ? "active":"" }}"><a href="{{URL($prefix."/")}}">Home</a></li>
+                <li role="presentation" class="{{ $menu == "personal" ? "active":"" }}"><a href="{{URL($prefix."/edit")}}">Personal Information</a></li>
                 <li role="presentation" class="{{ $menu == "paper" ? "active":"" }}"><a href="#">Paper Submission</a></li>
                 <li role="presentation" class="{{ $menu == "paperList" ? "active":"" }}"><a href="#">Paper List</a></li>
                 <li role="presentation" class="{{ $menu == "camera" ? "active":"" }}"><a href="#">Camera Ready Submission</a></li>

@@ -7,7 +7,6 @@ use App\User;
 use Illuminate\Http\Request;
 use Validator;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
