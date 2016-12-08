@@ -83,7 +83,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
 
-        $conf = Conference::where('url', self::$prefix)->first();
+        $conf = Conference::where('url', $this->prefix)->first();
 //        print_r(Conference::find(1));
 //        dd($conf);
         return $conf->users()->create([
@@ -109,7 +109,8 @@ class RegisterController extends Controller
      */
     public function showRegistrationForm()
     {
-        return view('auth.register', ['prefix' => $this->prefix]);
+        $conf = Conference::where('url', $this->prefix)->first();
+        return view('auth.register', ['prefix' => $this->prefix, "conf" => $conf]);
     }
 
 

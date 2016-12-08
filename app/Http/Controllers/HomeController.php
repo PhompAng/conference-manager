@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Model\Conference;
 
 class HomeController extends Controller
 {
@@ -26,6 +27,7 @@ class HomeController extends Controller
      */
     public function index($url=null)
     {
-        return view('home', ["prefix" => $this->prefix]);
+        $conf = Conference::where('url', $this->prefix)->first();
+        return view('home', ["prefix" => $this->prefix, "conf" => $conf]);
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Http\Request;
+use App\Model\Conference;
 
 class ResetPasswordController extends Controller
 {
@@ -48,8 +49,9 @@ class ResetPasswordController extends Controller
      */
     public function showResetForm(Request $request, $token = null)
     {
+        $conf = Conference::where('url', $this->prefix)->first();
         return view('auth.passwords.reset')->with(
-            ['token' => $token, 'email' => $request->email, "prefix" => $this->prefix]
+            ['token' => $token, 'email' => $request->email, "prefix" => $this->prefix, "conf" => $conf]
         );
     }
 }

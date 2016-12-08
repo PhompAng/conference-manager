@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use App\Model\Conference;
 
 class LoginController extends Controller
 {
@@ -56,7 +57,8 @@ class LoginController extends Controller
      */
     public function showLoginForm()
     {
-        return view('auth.login', ["prefix" => $this->prefix]);
+        $conf = Conference::where('url', $this->prefix)->first();
+        return view('auth.login', ["prefix" => $this->prefix, "conf" => $conf]);
     }
 
     public function logout(Request $request)

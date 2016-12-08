@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use Illuminate\Http\Request;
+use App\Model\Conference;
 
 class ForgotPasswordController extends Controller
 {
@@ -38,7 +39,9 @@ class ForgotPasswordController extends Controller
 
     public function showLinkRequestForm()
     {
-        return view('auth.passwords.email', ["prefix" => $this->prefix]);
+
+        $conf = Conference::where('url', $this->prefix)->first();
+        return view('auth.passwords.email', ["prefix" => $this->prefix, "conf" => $conf]);
     }
 
 
