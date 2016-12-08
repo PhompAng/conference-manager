@@ -16,7 +16,7 @@
         <div class="col-md-9">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Home
+                    {{$title}}
                 </div>
                 <div class="panel-body">
                     @yield('body')

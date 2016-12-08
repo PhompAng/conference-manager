@@ -40,17 +40,17 @@ class EditController extends Controller
         $conf = Conference::where('url', $this->prefix)->first();
         $validator = $this->validator($data);
         if ($validator->fails()) {
-            return view('author.edit')->with(["prefix" => $this->prefix, "menu" => "personal", "conf" => $conf, "user" => $request])->withErrors($validator);
+            return view('author.edit')->with(["prefix" => $this->prefix, "menu" => "personal", "title" => "Personal Information", "conf" => $conf, "user" => $request])->withErrors($validator);
         }
 
         Auth::user()->update($data);
-        return view('author.edit', ["prefix" => $this->prefix, "menu" => "personal", "conf" => $conf, "user" => Auth::user()]);
+        return view('author.edit', ["prefix" => $this->prefix, "menu" => "personal", "title" => "Personal Information", "conf" => $conf, "user" => Auth::user()]);
     }
 
     public function index($url=null) {
         $conf = Conference::where('url', $this->prefix)->first();
         $user = Auth::user();
-        return view('author.edit', ["prefix" => $this->prefix, "menu" => "personal", "conf" => $conf, "user" => $user]);
+        return view('author.edit', ["prefix" => $this->prefix, "menu" => "personal", "title" => "Personal Information", "conf" => $conf, "user" => $user]);
     }
 
 
