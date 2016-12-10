@@ -13,4 +13,8 @@ class Conference extends Model
     public function users() {
         return $this->hasMany('App\User');
     }
+
+    public function papers() {
+        return $this->hasMany('App\Model\Paper');
+    }
 }
