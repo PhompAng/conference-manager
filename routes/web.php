@@ -23,4 +23,5 @@ Route::group(['prefix' => '{url}'], function () {
     Route::post('/edit', 'Author\EditController@update');
     Route::get('/paper', 'Author\PaperController@index');
     Route::post('/paper', 'Author\PaperController@submit');
+    Route::get('/list', 'Author\PaperListController@index');
 });

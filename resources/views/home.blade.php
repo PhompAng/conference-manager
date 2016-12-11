@@ -8,7 +8,7 @@
                 <li role="presentation" class="{{ $menu == "home" ? "active":"" }}"><a href="{{URL($prefix."/")}}">Home</a></li>
                 <li role="presentation" class="{{ $menu == "personal" ? "active":"" }}"><a href="{{URL($prefix."/edit")}}">Personal Information</a></li>
                 <li role="presentation" class="{{ $menu == "paper" ? "active":"" }}"><a href="{{URL($prefix."/paper")}}">Paper Submission</a></li>
-                <li role="presentation" class="{{ $menu == "paperList" ? "active":"" }}"><a href="#">Paper List</a></li>
+                <li role="presentation" class="{{ $menu == "list" ? "active":"" }}"><a href="{{URL($prefix."/list")}}">Paper List</a></li>
                 <li role="presentation" class="{{ $menu == "camera" ? "active":"" }}"><a href="#">Camera Ready Submission</a></li>
                 <li role="presentation"><a href="#">Logout</a></li>
             </ul>
