@@ -4,12 +4,12 @@
         <div class="alert alert-success"> {{Session::get('success')}} </div>
     @endif
 
-    <table class="table">
+    <table class="table table-hover">
         <thead>
             <tr>
                 <th>Code</th>
                 <th>Title</th>
-                <th>Camera Ready</th>
+                <th>Paper</th>
                 <th>Status</th>
                 <th>Action</th>
             </tr>
