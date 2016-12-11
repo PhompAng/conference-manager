@@ -1,6 +1,6 @@
 @extends('home')
 @section('body')
-    <form action="{{ URL::to($prefix.'/paper') }}" method="POST" role="form" class="form-horizontal">
+    <form action="{{ URL::to($prefix.'/paper') }}" method="POST" enctype="multipart/form-data" role="form" class="form-horizontal">
 
         {{ csrf_field() }}
 
