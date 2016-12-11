@@ -24,4 +24,9 @@ Route::group(['prefix' => '{url}'], function () {
     Route::get('/paper', 'Author\PaperController@index');
     Route::post('/paper', 'Author\PaperController@submit');
     Route::get('/list', 'Author\PaperListController@index');
+
+    Route::get('/{user_id}/{file}', [
+        'as' => 'getPaper',
+        'uses' => 'Author\PaperController@getPaper'
+    ]);
 });

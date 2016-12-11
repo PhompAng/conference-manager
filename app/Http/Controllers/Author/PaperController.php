@@ -62,4 +62,9 @@ class PaperController extends Controller
         $conf = Conference::where('url', $this->prefix)->first();
         return view('author.paper', ["prefix" => $this->prefix, "menu" => "paper", "title" => "Paper Submission", "conf" => $conf]);
     }
+
+    public function getPaper($url, $user_id, $file) {
+        //TODO check user_id w/ Auth::user()
+        return response(Storage::disk('local')->get($url.'/'.$user_id.'/'.$file), 200, ['Content-Type' => 'application/pdf']);
+    }
 }

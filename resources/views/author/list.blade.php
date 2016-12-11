@@ -25,7 +25,9 @@
                             {{$topic}}
                         @endforeach
                     </td>
-                    <td></td>
+                    <td>
+                        <a href="{{URL::to($paper->file)}}" class="btn btn-primary">Download</a>
+                    </td>
                     <td></td>
                     <td></td>
                 </tr>
