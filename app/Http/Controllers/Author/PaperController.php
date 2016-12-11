@@ -24,10 +24,23 @@ class PaperController extends Controller
         $this->prefix = $request->segment(1);
     }
 
+    protected function validator(array $data) {
+        return Validator::make($data, [
+            'title' => 'required|max:255',
+            'topics.*' => 'required|max:255',
+            'file' => 'required|max:10000000|mimes:pdf',
+        ]);
+    }
+
     public function submit(Request $request) {
         $data = $request->all();
         $conf = Conference::where('url', $this->prefix)->first();
         $user = Auth::user();
+
+        $validator = $this->validator($data);
+        if ($validator->fails()) {
+            return redirect()->back()->with(["prefix" => $this->prefix, "menu" => "paper", "title" => "Paper Submission", "conf" => $conf])->withInput($data)->withErrors($validator);
+        }
 
         $paper = new Paper();
         $paper->fill($data);
