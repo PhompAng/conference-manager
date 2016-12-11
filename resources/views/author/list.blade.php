@@ -1,5 +1,9 @@
 @extends('home')
 @section('body')
+    @if(Session::has('success'))
+        <div class="alert alert-success"> {{Session::get('success')}} </div>
+    @endif
+
     <table class="table">
         <thead>
             <tr>

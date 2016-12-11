@@ -55,7 +55,7 @@ class PaperController extends Controller
         $paper->conference()->associate($conf);
         $paper->save();
 
-        dd($paper);
+        return redirect($this->prefix.'/list')->with(['success' => 'Success!']);
     }
 
     public function index($url=null) {
