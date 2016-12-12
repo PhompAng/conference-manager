@@ -10,7 +10,17 @@
                 <li role="presentation" class="{{ $menu == "paper" ? "active":"" }}"><a href="{{URL($prefix."/paper")}}">Paper Submission</a></li>
                 <li role="presentation" class="{{ $menu == "list" ? "active":"" }}"><a href="{{URL($prefix."/list")}}">Paper List</a></li>
                 <li role="presentation" class="{{ $menu == "camera" ? "active":"" }}"><a href="#">Camera Ready Submission</a></li>
-                <li role="presentation"><a href="#">Logout</a></li>
+                <li role="presentation">
+                    <a href="{{ url($prefix.'/logout') }}"
+                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                        Logout
+                    </a>
+
+                    <form id="logout-form" action="{{ url($prefix.'/logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
+                </li>
             </ul>
         </div>
         <div class="col-md-9">
