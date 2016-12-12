@@ -4,7 +4,7 @@
         <div class="alert alert-success"> {{Session::get('success')}} </div>
     @endif
 
-    <table class="table table-hover">
+    <table class="table table-hover table-bordered">
         <thead>
             <tr>
                 <th>Code</th>
@@ -31,8 +31,10 @@
                         <span>Last Update</span><br>
                         <span>{{$paper->updated_at}}</span>
                     </td>
-                    <td>
+                    <td class="text-center">
                         {{$paper->status}}
+                        <br>
+                        <a href="#" class="btn btn-primary btn-sm">View comments</a>
                     </td>
                     <td></td>
                 </tr>
