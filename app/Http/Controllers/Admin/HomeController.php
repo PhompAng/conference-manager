@@ -13,6 +13,6 @@ class HomeController extends Controller
     }
 
     public function index() {
-        dd("aaa");
+        return view('admin.home', ["title" => "Home"]);
     }
 }
