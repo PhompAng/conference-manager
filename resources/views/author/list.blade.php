@@ -31,7 +31,9 @@
                         <span>Last Update</span><br>
                         <span>{{$paper->updated_at}}</span>
                     </td>
-                    <td></td>
+                    <td>
+                        {{$paper->status}}
+                    </td>
                     <td></td>
                 </tr>
             @endforeach
