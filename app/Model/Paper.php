@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Paper extends Model
 {
-    protected $fillable = ["title", "topics", "file"];
+    protected $fillable = ["title", "topics", "status", "file"];
 
     public function getTopicsAttribute($value) {
         return json_decode($value, true);
