@@ -25,8 +25,11 @@
                             {{$topic}}
                         @endforeach
                     </td>
-                    <td>
-                        <a href="{{URL::to($paper->file)}}" class="btn btn-primary">Download</a>
+                    <td class="text-center">
+                        <a href="{{URL::to($paper->file)}}"><i class="fa fa-file-pdf-o fa-3x" aria-hidden="true"></i></a>
+                        <br>
+                        <span>Last Update</span><br>
+                        <span>{{$paper->updated_at}}</span>
                     </td>
                     <td></td>
                     <td></td>
