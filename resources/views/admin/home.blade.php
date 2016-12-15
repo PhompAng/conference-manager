@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-3">
                 <ul class="nav nav-pills nav-stacked">
-                    <li role="presentation"><a href="">Home</a></li>
+                    <li role="presentation" class="{{$menu == "home" ? "active":""}}"><a href="">Home</a></li>
                     <li role="presentation">
                         <a href="{{ url('/admin/logout') }}"
                            onclick="event.preventDefault();

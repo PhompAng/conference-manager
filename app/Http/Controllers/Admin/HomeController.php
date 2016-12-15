@@ -15,6 +15,6 @@ class HomeController extends Controller
 
     public function index() {
         $confs = Conference::all();
-        return view('admin.page.home', ["title" => "Home", "confs" => $confs]);
+        return view('admin.page.home', ["title" => "Home", "menu" => "home", "confs" => $confs]);
     }
 }
