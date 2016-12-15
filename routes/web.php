@@ -18,6 +18,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Auth::routes();
     Route::get('/', 'HomeController@index');
     Route::get('/add', 'AddController@index');
+    Route::post('/add', 'AddController@submit');
 });
 
 Route::group(['prefix' => '{url}'], function () {
