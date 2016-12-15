@@ -19,7 +19,17 @@
                     <td>{{$conf->id}}</td>
                     <td><a href="{{URL::to("/admin/".$conf->id)}}">{{$conf->name}}</a></td>
                     <td><a href="{{URL::to($conf->url)}}">{{URL::to($conf->url)}}</a></td>
-                    <td></td>
+                    <td>
+                        <a href="{{URL::to("/admin/".$conf->id)}}" class="btn btn-default btn-xs" data-toggle="tooltip"  title="View">
+                            <i class="fa fa-eye" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="btn btn-default btn-xs" data-toggle="tooltip"  title="Edit">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        </a>
+                        <button type="submit" class="btn btn-danger btn-xs" data-toggle="tooltip" title="Delete">
+                            <i class="fa fa-times"></i>
+                        </button>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
