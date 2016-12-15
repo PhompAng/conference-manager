@@ -39,7 +39,7 @@ class ConferenceController extends Controller
      */
     public function create()
     {
-        return view('admin.page.add', ["title" => "Add Conference", "menu" => "add"]);
+        return view('admin.page.create', ["title" => "Create Conference", "menu" => "add"]);
     }
 
     /**

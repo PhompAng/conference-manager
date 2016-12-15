@@ -5,7 +5,7 @@
             <div class="col-md-3">
                 <ul class="nav nav-pills nav-stacked">
                     <li role="presentation" class="{{$menu == "home" ? "active":""}}"><a href="{{URL("/admin")}}">Home</a></li>
-                    <li role="presentation" class="{{$menu == "add" ? "active":""}}"><a href="{{URL("/admin/create")}}">Add Conference</a></li>
+                    <li role="presentation" class="{{$menu == "add" ? "active":""}}"><a href="{{URL("/admin/create")}}">Create Conference</a></li>
                     <li role="presentation">
                         <a href="{{ url('/admin/logout') }}"
                            onclick="event.preventDefault();
