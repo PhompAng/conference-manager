@@ -1,0 +1,23 @@
+@extends('admin.home')
+@section('body')
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>URL</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($confs as $conf)
+                <tr>
+                    <td>{{$conf->id}}</td>
+                    <td>{{$conf->name}}</td>
+                    <td><a href="{{URL::to($conf->url)}}">{{URL::to($conf->url)}}</a></td>
+                    <td></td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+@endsection

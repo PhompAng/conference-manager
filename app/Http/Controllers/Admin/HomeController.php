@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Model\Conference;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -13,6 +14,7 @@ class HomeController extends Controller
     }
 
     public function index() {
-        return view('admin.home', ["title" => "Home"]);
+        $confs = Conference::all();
+        return view('admin.page.home', ["title" => "Home", "confs" => $confs]);
     }
 }

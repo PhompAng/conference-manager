@@ -25,7 +25,7 @@
                         {{$title}}
                     </div>
                     <div class="panel-body">
-                        {{--@yield('body')--}}
+                        @yield('body')
                     </div>
                 </div>
             </div>
