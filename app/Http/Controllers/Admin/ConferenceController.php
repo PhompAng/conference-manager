@@ -72,7 +72,8 @@ class ConferenceController extends Controller
      */
     public function show($id)
     {
-        //
+        $conf = Conference::find($id);
+        return view('admin.page.show', ["title" => $conf->name, "menu" => "home", "conf" => $conf]);
     }
 
     /**
