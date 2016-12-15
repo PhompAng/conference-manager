@@ -29,7 +29,7 @@
                     <div class="col-md-10">
                         <div class="input-group">
                             <div class="input-group-addon">{{URL('')}}/</div>
-                            <input id="url" type="text" class="form-control" name="url" required>
+                            <input id="url" type="text" class="form-control" name="url" value="{{old('url')}}" required>
                         </div>
 
                         @if ($errors->has('url'))
