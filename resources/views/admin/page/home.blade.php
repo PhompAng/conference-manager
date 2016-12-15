@@ -17,7 +17,7 @@
             @foreach($confs as $conf)
                 <tr>
                     <td>{{$conf->id}}</td>
-                    <td>{{$conf->name}}</td>
+                    <td><a href="{{URL::to("/admin/".$conf->id)}}">{{$conf->name}}</a></td>
                     <td><a href="{{URL::to($conf->url)}}">{{URL::to($conf->url)}}</a></td>
                     <td></td>
                 </tr>
