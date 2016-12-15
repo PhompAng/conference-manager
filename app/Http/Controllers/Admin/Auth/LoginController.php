@@ -28,7 +28,7 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo = '/admin';
-    protected $redirectAfterLogout = "/admin";
+    protected $redirectAfterLogout = "/admin/login";
 
     /**
      * Create a new controller instance.
@@ -37,7 +37,7 @@ class LoginController extends Controller
      */
     public function __construct(Request $request)
     {
-        $this->middleware('guest', ['except' => 'logout']);
+        $this->middleware('guest:admin', ['except' => 'logout']);
     }
 
     protected function guard()
@@ -57,9 +57,22 @@ class LoginController extends Controller
 
     public function logout(Request $request)
     {
+        $activeGuards = 0;
         $this->guard()->logout();
-        $request->session()->flush();
-        $request->session()->regenerate();
+
+        foreach (config('auth.guards') as $guard => $guardConfig) {
+            if ($guardConfig['driver'] === 'session') {
+                $guardName = Auth::guard($guard)->getName();
+                if ($request->session()->has($guardName) && $request->session()->get($guardName) === Auth::guard($guard)->user()->getAuthIdentifier()) {
+                    $activeGuards++;
+                }
+            }
+        }
+
+        if ($activeGuards === 0) {
+            $request->session()->flush();
+            $request->session()->regenerate();
+        }
         return redirect($this->redirectAfterLogout);
     }
 }
