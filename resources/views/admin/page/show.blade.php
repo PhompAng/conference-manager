@@ -30,7 +30,7 @@
 
         <div class="form-group">
             <div class="col-md-2 col-md-offset-5">
-                <a href="" class="btn btn-primary">
+                <a href="{{URL::route('edit', ["id" => $conf->id])}}" class="btn btn-primary">
                     Edit
                 </a>
             </div>

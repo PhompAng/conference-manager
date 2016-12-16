@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Conference;
@@ -18,6 +19,19 @@ class ConferenceController extends Controller
         return Validator::make($data, [
             'name' => 'required|max:255',
             'url' => 'required|max:20',
+        ]);
+    }
+
+    protected function editValidator(array $data) {
+        return Validator::make($data, [
+            'name' => 'required|max:255',
+            'url' => 'required|max:20',
+            'open' => 'required|date',
+            'close' => 'required|date',
+            'paper_deadline' => 'required|date',
+            'acceptance' => 'required|date',
+            'camera_deadline' => 'required|date',
+            'pre_regis' => 'required|date',
         ]);
     }
 
@@ -84,7 +98,8 @@ class ConferenceController extends Controller
      */
     public function edit($id)
     {
-        //
+        $conf = Conference::find($id);
+        return view('admin.page.edit', ["title" => "Edit " . $conf->name, "menu" => "home", "conf" => $conf]);
     }
 
     /**
@@ -96,7 +111,15 @@ class ConferenceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $conf = Conference::find($id);
+        $data = $request->all();
+        $validator = $this->editValidator($data);
+        if ($validator->fails()) {
+            return redirect()->back()->with(["title" => "Edit " . $conf->name, "menu" => "home", "conf" => $conf])->withInput($data)->withErrors($validator);
+        }
+
+        $conf->update($data);
+        return redirect('/admin')->with(['success' => 'Success!']);
     }
 
     /**
