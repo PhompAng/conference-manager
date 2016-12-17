@@ -14,7 +14,12 @@
 //Route::get('/', function () {
 //    return view('welcome');
 //});
-
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
+    Auth::routes();
+    Route::resource('/', 'ConferenceController', ['parameters' => [
+        '' => 'id'
+    ]]);
+});
 
 Route::group(['prefix' => '{url}'], function () {
     Auth::routes();

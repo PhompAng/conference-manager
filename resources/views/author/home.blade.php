@@ -12,34 +12,48 @@
         </tr>
         </thead>
         <tbody>
+        {{--<tr>--}}
+            {{--<td>1</td>--}}
+            {{--<td>Open Conference</td>--}}
+            {{--<td>--}}
+                {{--{{\Carbon\Carbon::parse($conf->open)->toDayDateTimeString()}}--}}
+            {{--</td>--}}
+        {{--</tr>--}}
         <tr>
             <td>1</td>
             <td>Paper submission deadline</td>
             <td>
-                July 11, 2016 23:59:59
+                {{isset($conf->paper_deadline) ? \Carbon\Carbon::parse($conf->paper_deadline)->toDayDateTimeString() : "Soon"}}
             </td>
         </tr>
         <tr>
             <td>2</td>
             <td>Acceptance announcement</td>
             <td>
-                August 23, 2016 23:59:59
+                {{isset($conf->acceptance) ? \Carbon\Carbon::parse($conf->acceptance)->toDayDateTimeString() : "Soon"}}
             </td>
         </tr>
         <tr>
             <td>3</td>
             <td>Camera-ready submission deadline</td>
             <td>
-                September 5, 2016 23:59:59
+                {{isset($conf->camera_deadline) ? \Carbon\Carbon::parse($conf->camera_deadline)->toDayDateTimeString() : "Soon"}}
             </td>
         </tr>
         <tr>
             <td>4</td>
             <td>Pre-registration deadline</td>
             <td>
-                October 3, 2016 23:59:59
+                {{isset($conf->pre_regis) ? \Carbon\Carbon::parse($conf->pre_regis)->toDayDateTimeString() : "Soon"}}
             </td>
         </tr>
+        {{--<tr>--}}
+            {{--<td>6</td>--}}
+            {{--<td>Close Conference</td>--}}
+            {{--<td>--}}
+                {{--{{\Carbon\Carbon::parse($conf->close)->toDayDateTimeString()}}--}}
+            {{--</td>--}}
+        {{--</tr>--}}
         </tbody>
     </table>
 @endsection

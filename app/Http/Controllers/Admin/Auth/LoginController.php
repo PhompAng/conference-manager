@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\Admin\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
-use App\Model\Conference;
 use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
@@ -28,10 +27,8 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
-    protected $redirectAfterLogout = "/";
-
-    protected $prefix = "/";
+    protected $redirectTo = '/admin';
+    protected $redirectAfterLogout = "/admin/login";
 
     /**
      * Create a new controller instance.
@@ -40,15 +37,12 @@ class LoginController extends Controller
      */
     public function __construct(Request $request)
     {
-        $this->middleware('guest', ['except' => 'logout']);
-        $this->prefix = $request->segment(1);
-        $this->redirectTo = $this->prefix;
-        $this->redirectAfterLogout = $this->prefix;
+        $this->middleware('guest:admin', ['except' => 'logout']);
     }
 
-    public function username()
+    protected function guard()
     {
-        return 'username';
+        return Auth::guard('admin');
     }
 
     /**
@@ -58,8 +52,7 @@ class LoginController extends Controller
      */
     public function showLoginForm()
     {
-        $conf = Conference::where('url', $this->prefix)->first();
-        return view('auth.login', ["prefix" => $this->prefix, "conf" => $conf]);
+        return view('admin.auth.login');
     }
 
     public function logout(Request $request)
@@ -81,6 +74,5 @@ class LoginController extends Controller
             $request->session()->regenerate();
         }
         return redirect($this->redirectAfterLogout);
-
     }
 }
