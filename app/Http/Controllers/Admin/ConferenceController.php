@@ -130,6 +130,7 @@ class ConferenceController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Conference::find($id)->delete();
+        return redirect('/admin')->with(['success' => 'Delete Success!']);
     }
 }
