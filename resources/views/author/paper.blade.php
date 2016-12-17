@@ -31,9 +31,6 @@
 
                     <div class="col-md-10">
                         <select id="topics" class="form-control" name="topics[]" required multiple>
-                            <option value="1">option1</option>
-                            <option value="2">option2</option>
-                            <option value="3">option3</option>
                         </select>
                     </div>
                     @if($errors->has('topics'))
@@ -107,7 +104,10 @@
 
                 });
 
-                $("#topics").select2();
+                $("#topics").select2({
+                    tags: true,
+                    tokenSeparators: [',', ' ']
+                });
             });
 
         });
