@@ -27,6 +27,32 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public static function getTitle($value) {
+        switch ($value) {
+            case 1:
+                return "Dr.";
+            case 2:
+                return "Mr.";
+            case 3:
+                return "Ms.";
+            case 4:
+                return "Mrs.";
+        }
+    }
+
+    public static function getAcademicPosition($value) {
+        switch ($value) {
+            case 1:
+                return "Prof.";
+            case 2:
+                return "Assoc. Prof.";
+            case 3:
+                return "Asst. Prof.";
+            case 4:
+                return "";
+        }
+    }
+
     public function conference() {
         return $this->belongsTo('App\Model\Conference');
     }
