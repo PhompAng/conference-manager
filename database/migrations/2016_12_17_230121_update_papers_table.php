@@ -16,7 +16,7 @@ class UpdatePapersTable extends Migration
         Schema::table('papers', function (Blueprint $table) {
             $table->string('abstract')->after('title');
             $table->tinyInteger('presentation')->after('file')->nullable();
-            $table->string('author')->after('presentation');
+            $table->string('authors')->after('presentation');
         });
     }
 
@@ -30,7 +30,7 @@ class UpdatePapersTable extends Migration
         Schema::table('papers', function (Blueprint $table) {
             $table->dropColumn('abstract');
             $table->dropColumn('presentation');
-            $table->dropColumn('author');
+            $table->dropColumn('authors');
         });
     }
 }
