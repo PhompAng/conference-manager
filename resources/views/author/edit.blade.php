@@ -107,267 +107,266 @@
 
                     <div class="col-md-8">
                         <select class="form-control" name="country" required>
-                            <option value="Afghanistan">Afghanistan</option>
-                            <option value="Aland Islands">Aland Islands</option>
-                            <option value="Albania">Albania</option>
-                            <option value="Algeria">Algeria</option>
-                            <option value="American Samoa">American Samoa</option>
-                            <option value="Andorra">Andorra</option>
-                            <option value="Angola">Angola</option>
-                            <option value="Anguilla">Anguilla</option>
-                            <option value="Antarctica">Antarctica</option>
-                            <option value="Antigua">Antigua</option>
-                            <option value="Argentina">Argentina</option>
-                            <option value="Armenia">Armenia</option>
-                            <option value="Aruba">Aruba</option>
-                            <option value="Australia">Australia</option>
-                            <option value="Austria">Austria</option>
-                            <option value="Azerbaijan">Azerbaijan</option>
-                            <option value="Bahamas">Bahamas</option>
-                            <option value="Bahrain">Bahrain</option>
-                            <option value="Bangladesh">Bangladesh</option>
-                            <option value="Barbados">Barbados</option>
-                            <option value="Barbuda">Barbuda</option>
-                            <option value="Belarus">Belarus</option>
-                            <option value="Belgium">Belgium</option>
-                            <option value="Belize">Belize</option>
-                            <option value="Benin">Benin</option>
-                            <option value="Bermuda">Bermuda</option>
-                            <option value="Bhutan">Bhutan</option>
-                            <option value="Bolivia">Bolivia</option>
-                            <option value="Bosnia">Bosnia</option>
-                            <option value="Botswana">Botswana</option>
-                            <option value="Bouvet Island">Bouvet Island</option>
-                            <option value="Brazil">Brazil</option>
-                            <option value="British Indian Ocean Trty.">British Indian Ocean Trty.</option>
-                            <option value="Brunei Darussalam">Brunei Darussalam</option>
-                            <option value="Bulgaria">Bulgaria</option>
-                            <option value="Burkina Faso">Burkina Faso</option>
-                            <option value="Burundi">Burundi</option>
-                            <option value="Caicos Islands">Caicos Islands</option>
-                            <option value="Cambodia">Cambodia</option>
-                            <option value="Cameroon">Cameroon</option>
-                            <option value="Canada">Canada</option>
-                            <option value="Cape Verde">Cape Verde</option>
-                            <option value="Cayman Islands">Cayman Islands</option>
-                            <option value="Central African Republic">Central African Republic</option>
-                            <option value="Chad">Chad</option>
-                            <option value="Chile">Chile</option>
-                            <option value="China">China</option>
-                            <option value="Christmas Island">Christmas Island</option>
-                            <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
-                            <option value="Colombia">Colombia</option>
-                            <option value="Comoros">Comoros</option>
-                            <option value="Congo">Congo</option>
-                            <option value="Congo, Democratic Republic of the">Congo, Democratic Republic of the</option>
-                            <option value="Cook Islands">Cook Islands</option>
-                            <option value="Costa Rica">Costa Rica</option>
-                            <option value="Cote d'Ivoire">Cote d'Ivoire</option>
-                            <option value="Croatia">Croatia</option>
-                            <option value="Cuba">Cuba</option>
-                            <option value="Cyprus">Cyprus</option>
-                            <option value="Czech Republic">Czech Republic</option>
-                            <option value="Denmark">Denmark</option>
-                            <option value="Djibouti">Djibouti</option>
-                            <option value="Dominica">Dominica</option>
-                            <option value="Dominican Republic">Dominican Republic</option>
-                            <option value="Ecuador">Ecuador</option>
-                            <option value="Egypt">Egypt</option>
-                            <option value="El Salvador">El Salvador</option>
-                            <option value="Equatorial Guinea">Equatorial Guinea</option>
-                            <option value="Eritrea">Eritrea</option>
-                            <option value="Estonia">Estonia</option>
-                            <option value="Ethiopia">Ethiopia</option>
-                            <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
-                            <option value="Faroe Islands">Faroe Islands</option>
-                            <option value="Fiji">Fiji</option>
-                            <option value="Finland">Finland</option>
-                            <option value="France">France</option>
-                            <option value="French Guiana">French Guiana</option>
-                            <option value="French Polynesia">French Polynesia</option>
-                            <option value="French Southern Territories">French Southern Territories</option>
-                            <option value="Futuna Islands">Futuna Islands</option>
-                            <option value="Gabon">Gabon</option>
-                            <option value="Gambia">Gambia</option>
-                            <option value="Georgia">Georgia</option>
-                            <option value="Germany">Germany</option>
-                            <option value="Ghana">Ghana</option>
-                            <option value="Gibraltar">Gibraltar</option>
-                            <option value="Greece">Greece</option>
-                            <option value="Greenland">Greenland</option>
-                            <option value="Grenada">Grenada</option>
-                            <option value="Guadeloupe">Guadeloupe</option>
-                            <option value="Guam">Guam</option>
-                            <option value="Guatemala">Guatemala</option>
-                            <option value="Guernsey">Guernsey</option>
-                            <option value="Guinea">Guinea</option>
-                            <option value="Guinea-Bissau">Guinea-Bissau</option>
-                            <option value="Guyana">Guyana</option>
-                            <option value="Haiti">Haiti</option>
-                            <option value="Heard">Heard</option>
-                            <option value="Herzegovina">Herzegovina</option>
-                            <option value="Holy See">Holy See</option>
-                            <option value="Honduras">Honduras</option>
-                            <option value="Hong Kong">Hong Kong</option>
-                            <option value="Hungary">Hungary</option>
-                            <option value="Iceland">Iceland</option>
-                            <option value="India">India</option>
-                            <option value="Indonesia">Indonesia</option>
-                            <option value="Iran (Islamic Republic of)">Iran (Islamic Republic of)</option>
-                            <option value="Iraq">Iraq</option>
-                            <option value="Ireland">Ireland</option>
-                            <option value="Isle of Man">Isle of Man</option>
-                            <option value="Israel">Israel</option>
-                            <option value="Italy">Italy</option>
-                            <option value="Jamaica">Jamaica</option>
-                            <option value="Jan Mayen Islands">Jan Mayen Islands</option>
-                            <option value="Japan">Japan</option>
-                            <option value="Jersey">Jersey</option>
-                            <option value="Jordan">Jordan</option>
-                            <option value="Kazakhstan">Kazakhstan</option>
-                            <option value="Kenya">Kenya</option>
-                            <option value="Kiribati">Kiribati</option>
-                            <option value="Korea">Korea</option>
-                            <option value="Korea (Democratic)">Korea (Democratic)</option>
-                            <option value="Kuwait">Kuwait</option>
-                            <option value="Kyrgyzstan">Kyrgyzstan</option>
-                            <option value="Lao">Lao</option>
-                            <option value="Latvia">Latvia</option>
-                            <option value="Lebanon">Lebanon</option>
-                            <option value="Lesotho">Lesotho</option>
-                            <option value="Liberia">Liberia</option>
-                            <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
-                            <option value="Liechtenstein">Liechtenstein</option>
-                            <option value="Lithuania">Lithuania</option>
-                            <option value="Luxembourg">Luxembourg</option>
-                            <option value="Macao">Macao</option>
-                            <option value="Macedonia">Macedonia</option>
-                            <option value="Madagascar">Madagascar</option>
-                            <option value="Malawi">Malawi</option>
-                            <option value="Malaysia">Malaysia</option>
-                            <option value="Maldives">Maldives</option>
-                            <option value="Mali">Mali</option>
-                            <option value="Malta">Malta</option>
-                            <option value="Marshall Islands">Marshall Islands</option>
-                            <option value="Martinique">Martinique</option>
-                            <option value="Mauritania">Mauritania</option>
-                            <option value="Mauritius">Mauritius</option>
-                            <option value="Mayotte">Mayotte</option>
-                            <option value="McDonald Islands">McDonald Islands</option>
-                            <option value="Mexico">Mexico</option>
-                            <option value="Micronesia">Micronesia</option>
-                            <option value="Miquelon">Miquelon</option>
-                            <option value="Moldova">Moldova, $user->></option>, $user->option
-                            <option value="Monaco">Monaco</option>
-                            <option value="Mongolia">Mongolia</option>
-                            <option value="Montenegro">Montenegro</option>
-                            <option value="Montserrat">Montserrat</option>
-                            <option value="Morocco">Morocco</option>
-                            <option value="Mozambique">Mozambique</option>
-                            <option value="Myanmar">Myanmar</option>
-                            <option value="Namibia">Namibia</option>
-                            <option value="Nauru">Nauru</option>
-                            <option value="Nepal">Nepal</option>
-                            <option value="Netherlands">Netherlands</option>
-                            <option value="Netherlands Antilles">Netherlands Antilles</option>
-                            <option value="Nevis">Nevis</option>
-                            <option value="New Caledonia">New Caledonia</option>
-                            <option value="New Zealand">New Zealand</option>
-                            <option value="Nicaragua">Nicaragua</option>
-                            <option value="Niger">Niger</option>
-                            <option value="Nigeria">Nigeria</option>
-                            <option value="Niue">Niue</option>
-                            <option value="Norfolk Island">Norfolk Island</option>
-                            <option value="Northern Mariana Islands">Northern Mariana Islands</option>
-                            <option value="Norway">Norway</option>
-                            <option value="Oman">Oman</option>
-                            <option value="Pakistan">Pakistan</option>
-                            <option value="Palau">Palau</option>
-                            <option value="Palestinian Territory, Occupied">Palestinian Territory, Occupied</option>
-                            <option value="Panama">Panama</option>
-                            <option value="Papua New Guinea">Papua New Guinea</option>
-                            <option value="Paraguay">Paraguay</option>
-                            <option value="Peru">Peru</option>
-                            <option value="Philippines">Philippines</option>
-                            <option value="Pitcairn">Pitcairn</option>
-                            <option value="Poland">Poland</option>
-                            <option value="Portugal">Portugal</option>
-                            <option value="Principe">Principe</option>
-                            <option value="Puerto Rico">Puerto Rico</option>
-                            <option value="Qatar">Qatar</option>
-                            <option value="Reunion">Reunion</option>
-                            <option value="Romania">Romania</option>
-                            <option value="Russian Federation">Russian Federation</option>
-                            <option value="Rwanda">Rwanda</option>
-                            <option value="Saint Barthelemy">Saint Barthelemy</option>
-                            <option value="Saint Helena">Saint Helena</option>
-                            <option value="Saint Kitts">Saint Kitts</option>
-                            <option value="Saint Lucia">Saint Lucia</option>
-                            <option value="Saint Martin (French part)">Saint Martin (French part)</option>
-                            <option value="Saint Pierre">Saint Pierre</option>
-                            <option value="Saint Vincent">Saint Vincent</option>
-                            <option value="Samoa">Samoa</option>
-                            <option value="San Marino">San Marino</option>
-                            <option value="Sao Tome">Sao Tome</option>
-                            <option value="Saudi Arabia">Saudi Arabia</option>
-                            <option value="Senegal">Senegal</option>
-                            <option value="Serbia">Serbia</option>
-                            <option value="Seychelles">Seychelles</option>
-                            <option value="Sierra Leone">Sierra Leone</option>
-                            <option value="Singapore">Singapore</option>
-                            <option value="Slovakia">Slovakia</option>
-                            <option value="Slovenia">Slovenia</option>
-                            <option value="Solomon Islands">Solomon Islands</option>
-                            <option value="Somalia">Somalia</option>
-                            <option value="South Africa">South Africa</option>
-                            <option value="South Georgia">South Georgia</option>
-                            <option value="South Sandwich Islands">South Sandwich Islands</option>
-                            <option value="Spain">Spain</option>
-                            <option value="Sri Lanka">Sri Lanka</option>
-                            <option value="Sudan">Sudan</option>
-                            <option value="Suriname">Suriname</option>
-                            <option value="Svalbard">Svalbard</option>
-                            <option value="Swaziland">Swaziland</option>
-                            <option value="Sweden">Sweden</option>
-                            <option value="Switzerland">Switzerland</option>
-                            <option value="Syrian Arab Republic">Syrian Arab Republic</option>
-                            <option value="Taiwan">Taiwan</option>
-                            <option value="Tajikistan">Tajikistan</option>
-                            <option value="Tanzania">Tanzania</option>
-                            <option value="Thailand" selected="">Thailand</option>
-                            <option value="The Grenadines">The Grenadines</option>
-                            <option value="Timor-Leste">Timor-Leste</option>
-                            <option value="Tobago">Tobago</option>
-                            <option value="Togo">Togo</option>
-                            <option value="Tokelau">Tokelau</option>
-                            <option value="Tonga">Tonga</option>
-                            <option value="Trinidad">Trinidad</option>
-                            <option value="Tunisia">Tunisia</option>
-                            <option value="Turkey">Turkey</option>
-                            <option value="Turkmenistan">Turkmenistan</option>
-                            <option value="Turks Islands">Turks Islands</option>
-                            <option value="Tuvalu">Tuvalu</option>
-                            <option value="Uganda">Uganda</option>
-                            <option value="Ukraine">Ukraine</option>
-                            <option value="United Arab Emirates">United Arab Emirates</option>
-                            <option value="United Kingdom">United Kingdom</option>
-                            <option value="United States">United States</option>
-                            <option value="Uruguay">Uruguay</option>
-                            <option value="US Minor Outlying Islands">US Minor Outlying Islands</option>
-                            <option value="Uzbekistan">Uzbekistan</option>
-                            <option value="Vanuatu">Vanuatu</option>
-                            <option value="Vatican City State">Vatican City State</option>
-                            <option value="Venezuela">Venezuela</option>
-                            <option value="Vietnam">Vietnam</option>
-                            <option value="Virgin Islands (British)">Virgin Islands (British)</option>
-                            <option value="Virgin Islands (US)">Virgin Islands (US)</option>
-                            <option value="Wallis">Wallis</option>
-                            <option value="Western Sahara">Western Sahara</option>
-                            <option value="Yemen">Yemen</option>
-                            <option value="Zambia">Zambia</option>
-                            <option value="Zimbabwe">Zimbabwe</option>
+                            <option value="Afghanistan" {{$user->country == "Afghanistan" ? "selected":""}}>Afghanistan</option>
+                            <option value="Aland Islands" {{$user->country == "Aland Islands" ? "selected":""}}>Aland Islands</option>
+                            <option value="Albania" {{$user->country == "Albania" ? "selected":""}}>Albania</option>
+                            <option value="Algeria" {{$user->country == "Algeria" ? "selected":""}}>Algeria</option>
+                            <option value="American Samoa" {{$user->country == "American Samoa" ? "selected":""}}>American Samoa</option>
+                            <option value="Andorra" {{$user->country == "Andorra" ? "selected":""}}>Andorra</option>
+                            <option value="Angola" {{$user->country == "Angola" ? "selected":""}}>Angola</option>
+                            <option value="Anguilla" {{$user->country == "Anguilla" ? "selected":""}}>Anguilla</option>
+                            <option value="Antarctica" {{$user->country == "Antarctica" ? "selected":""}}>Antarctica</option>
+                            <option value="Antigua" {{$user->country == "Antigua" ? "selected":""}}>Antigua</option>
+                            <option value="Argentina" {{$user->country == "Argentina" ? "selected":""}}>Argentina</option>
+                            <option value="Armenia" {{$user->country == "Armenia" ? "selected":""}}>Armenia</option>
+                            <option value="Aruba" {{$user->country == "Aruba" ? "selected":""}}>Aruba</option>
+                            <option value="Australia" {{$user->country == "Australia" ? "selected":""}}>Australia</option>
+                            <option value="Austria" {{$user->country == "Austria" ? "selected":""}}>Austria</option>
+                            <option value="Azerbaijan" {{$user->country == "Azerbaijan" ? "selected":""}}>Azerbaijan</option>
+                            <option value="Bahamas" {{$user->country == "Bahamas" ? "selected":""}}>Bahamas</option>
+                            <option value="Bahrain" {{$user->country == "Bahrain" ? "selected":""}}>Bahrain</option>
+                            <option value="Bangladesh" {{$user->country == "Bangladesh" ? "selected":""}}>Bangladesh</option>
+                            <option value="Barbados" {{$user->country == "Barbados" ? "selected":""}}>Barbados</option>
+                            <option value="Barbuda" {{$user->country == "Barbuda" ? "selected":""}}>Barbuda</option>
+                            <option value="Belarus" {{$user->country == "Belarus" ? "selected":""}}>Belarus</option>
+                            <option value="Belgium" {{$user->country == "Belgium" ? "selected":""}}>Belgium</option>
+                            <option value="Belize" {{$user->country == "Belize" ? "selected":""}}>Belize</option>
+                            <option value="Benin" {{$user->country == "Benin" ? "selected":""}}>Benin</option>
+                            <option value="Bermuda" {{$user->country == "Bermuda" ? "selected":""}}>Bermuda</option>
+                            <option value="Bhutan" {{$user->country == "Bhutan" ? "selected":""}}>Bhutan</option>
+                            <option value="Bolivia" {{$user->country == "Bolivia" ? "selected":""}}>Bolivia</option>
+                            <option value="Bosnia" {{$user->country == "Bosnia" ? "selected":""}}>Bosnia</option>
+                            <option value="Botswana" {{$user->country == "Botswana" ? "selected":""}}>Botswana</option>
+                            <option value="Bouvet Island" {{$user->country == "Bouvet Island" ? "selected":""}}>Bouvet Island</option>
+                            <option value="Brazil" {{$user->country == "Brazil" ? "selected":""}}>Brazil</option>
+                            <option value="British Indian Ocean Trty." {{$user->country == "British Indian Ocean Trty." ? "selected":""}}>British Indian Ocean Trty.</option>
+                            <option value="Brunei Darussalam" {{$user->country == "Brunei Darussalam" ? "selected":""}}>Brunei Darussalam</option>
+                            <option value="Bulgaria" {{$user->country == "Bulgaria" ? "selected":""}}>Bulgaria</option>
+                            <option value="Burkina Faso" {{$user->country == "Burkina Faso" ? "selected":""}}>Burkina Faso</option>
+                            <option value="Burundi" {{$user->country == "Burundi" ? "selected":""}}>Burundi</option>
+                            <option value="Caicos Islands" {{$user->country == "Caicos Islands" ? "selected":""}}>Caicos Islands</option>
+                            <option value="Cambodia" {{$user->country == "Cambodia" ? "selected":""}}>Cambodia</option>
+                            <option value="Cameroon" {{$user->country == "Cameroon" ? "selected":""}}>Cameroon</option>
+                            <option value="Canada" {{$user->country == "Canada" ? "selected":""}}>Canada</option>
+                            <option value="Cape Verde" {{$user->country == "Cape Verde" ? "selected":""}}>Cape Verde</option>
+                            <option value="Cayman Islands" {{$user->country == "Cayman Islands" ? "selected":""}}>Cayman Islands</option>
+                            <option value="Central African Republic" {{$user->country == "Central African Republic" ? "selected":""}}>Central African Republic</option>
+                            <option value="Chad" {{$user->country == "Chad" ? "selected":""}}>Chad</option>
+                            <option value="Chile" {{$user->country == "Chile" ? "selected":""}}>Chile</option>
+                            <option value="China" {{$user->country == "China" ? "selected":""}}>China</option>
+                            <option value="Christmas Island" {{$user->country == "Christmas Island" ? "selected":""}}>Christmas Island</option>
+                            <option value="Cocos (Keeling) Islands" {{$user->country == "Cocos (Keeling) Islands" ? "selected":""}}>Cocos (Keeling) Islands</option>
+                            <option value="Colombia" {{$user->country == "Colombia" ? "selected":""}}>Colombia</option>
+                            <option value="Comoros" {{$user->country == "Comoros" ? "selected":""}}>Comoros</option>
+                            <option value="Congo" {{$user->country == "Congo" ? "selected":""}}>Congo</option>
+                            <option value="Congo, Democratic Republic of the" {{$user->country == "Congo, Democratic Republic of the" ? "selected":""}}>Congo, Democratic Republic of the</option>
+                            <option value="Cook Islands" {{$user->country == "Cook Islands" ? "selected":""}}>Cook Islands</option>
+                            <option value="Costa Rica" {{$user->country == "Costa Rica" ? "selected":""}}>Costa Rica</option>
+                            <option value="Cote d'Ivoire" {{$user->country == "Cote d'Ivoire" ? "selected":""}}>Cote d'Ivoire</option>
+                            <option value="Croatia" {{$user->country == "Croatia" ? "selected":""}}>Croatia</option>
+                            <option value="Cuba" {{$user->country == "Cuba" ? "selected":""}}>Cuba</option>
+                            <option value="Cyprus" {{$user->country == "Cyprus" ? "selected":""}}>Cyprus</option>
+                            <option value="Czech Republic" {{$user->country == "Czech Republic" ? "selected":""}}>Czech Republic</option>
+                            <option value="Denmark" {{$user->country == "Denmark" ? "selected":""}}>Denmark</option>
+                            <option value="Djibouti" {{$user->country == "Djibouti" ? "selected":""}}>Djibouti</option>
+                            <option value="Dominica" {{$user->country == "Dominica" ? "selected":""}}>Dominica</option>
+                            <option value="Dominican Republic" {{$user->country == "Dominican Republic" ? "selected":""}}>Dominican Republic</option>
+                            <option value="Ecuador" {{$user->country == "Ecuador" ? "selected":""}}>Ecuador</option>
+                            <option value="Egypt" {{$user->country == "Egypt" ? "selected":""}}>Egypt</option>
+                            <option value="El Salvador" {{$user->country == "El Salvador" ? "selected":""}}>El Salvador</option>
+                            <option value="Equatorial Guinea" {{$user->country == "Equatorial Guinea" ? "selected":""}}>Equatorial Guinea</option>
+                            <option value="Eritrea" {{$user->country == "Eritrea" ? "selected":""}}>Eritrea</option>
+                            <option value="Estonia" {{$user->country == "Estonia" ? "selected":""}}>Estonia</option>
+                            <option value="Ethiopia" {{$user->country == "Ethiopia" ? "selected":""}}>Ethiopia</option>
+                            <option value="Falkland Islands (Malvinas)" {{$user->country == "Falkland Islands (Malvinas)" ? "selected":""}}>Falkland Islands (Malvinas)</option>
+                            <option value="Faroe Islands" {{$user->country == "Faroe Islands" ? "selected":""}}>Faroe Islands</option>
+                            <option value="Fiji" {{$user->country == "Fiji" ? "selected":""}}>Fiji</option>
+                            <option value="Finland" {{$user->country == "Finland" ? "selected":""}}>Finland</option>
+                            <option value="France" {{$user->country == "France" ? "selected":""}}>France</option>
+                            <option value="French Guiana" {{$user->country == "French Guiana" ? "selected":""}}>French Guiana</option>
+                            <option value="French Polynesia" {{$user->country == "French Polynesia" ? "selected":""}}>French Polynesia</option>
+                            <option value="French Southern Territories" {{$user->country == "French Southern Territories" ? "selected":""}}>French Southern Territories</option>
+                            <option value="Futuna Islands" {{$user->country == "Futuna Islands" ? "selected":""}}>Futuna Islands</option>
+                            <option value="Gabon" {{$user->country == "Gabon" ? "selected":""}}>Gabon</option>
+                            <option value="Gambia" {{$user->country == "Gambia" ? "selected":""}}>Gambia</option>
+                            <option value="Georgia" {{$user->country == "Georgia" ? "selected":""}}>Georgia</option>
+                            <option value="Germany" {{$user->country == "Germany" ? "selected":""}}>Germany</option>
+                            <option value="Ghana" {{$user->country == "Ghana" ? "selected":""}}>Ghana</option>
+                            <option value="Gibraltar" {{$user->country == "Gibraltar" ? "selected":""}}>Gibraltar</option>
+                            <option value="Greece" {{$user->country == "Greece" ? "selected":""}}>Greece</option>
+                            <option value="Greenland" {{$user->country == "Greenland" ? "selected":""}}>Greenland</option>
+                            <option value="Grenada" {{$user->country == "Grenada" ? "selected":""}}>Grenada</option>
+                            <option value="Guadeloupe" {{$user->country == "Guadeloupe" ? "selected":""}}>Guadeloupe</option>
+                            <option value="Guam" {{$user->country == "Guam" ? "selected":""}}>Guam</option>
+                            <option value="Guatemala" {{$user->country == "Guatemala" ? "selected":""}}>Guatemala</option>
+                            <option value="Guernsey" {{$user->country == "Guernsey" ? "selected":""}}>Guernsey</option>
+                            <option value="Guinea" {{$user->country == "Guinea" ? "selected":""}}>Guinea</option>
+                            <option value="Guinea-Bissau" {{$user->country == "Guinea-Bissau" ? "selected":""}}>Guinea-Bissau</option>
+                            <option value="Guyana" {{$user->country == "Guyana" ? "selected":""}}>Guyana</option>
+                            <option value="Haiti" {{$user->country == "Haiti" ? "selected":""}}>Haiti</option>
+                            <option value="Heard" {{$user->country == "Heard" ? "selected":""}}>Heard</option>
+                            <option value="Herzegovina" {{$user->country == "Herzegovina" ? "selected":""}}>Herzegovina</option>
+                            <option value="Holy See" {{$user->country == "Holy See" ? "selected":""}}>Holy See</option>
+                            <option value="Honduras" {{$user->country == "Honduras" ? "selected":""}}>Honduras</option>
+                            <option value="Hong Kong" {{$user->country == "Hong Kong" ? "selected":""}}>Hong Kong</option>
+                            <option value="Hungary" {{$user->country == "Hungary" ? "selected":""}}>Hungary</option>
+                            <option value="Iceland" {{$user->country == "Iceland" ? "selected":""}}>Iceland</option>
+                            <option value="India" {{$user->country == "India" ? "selected":""}}>India</option>
+                            <option value="Indonesia" {{$user->country == "Indonesia" ? "selected":""}}>Indonesia</option>
+                            <option value="Iran (Islamic Republic of)" {{$user->country == "Iran (Islamic Republic of)" ? "selected":""}}>Iran (Islamic Republic of)</option>
+                            <option value="Iraq" {{$user->country == "Iraq" ? "selected":""}}>Iraq</option>
+                            <option value="Ireland" {{$user->country == "Ireland" ? "selected":""}}>Ireland</option>
+                            <option value="Isle of Man" {{$user->country == "Isle of Man" ? "selected":""}}>Isle of Man</option>
+                            <option value="Israel" {{$user->country == "Israel" ? "selected":""}}>Israel</option>
+                            <option value="Italy" {{$user->country == "Italy" ? "selected":""}}>Italy</option>
+                            <option value="Jamaica" {{$user->country == "Jamaica" ? "selected":""}}>Jamaica</option>
+                            <option value="Jan Mayen Islands" {{$user->country == "Jan Mayen Islands" ? "selected":""}}>Jan Mayen Islands</option>
+                            <option value="Japan" {{$user->country == "Japan" ? "selected":""}}>Japan</option>
+                            <option value="Jersey" {{$user->country == "Jersey" ? "selected":""}}>Jersey</option>
+                            <option value="Jordan" {{$user->country == "Jordan" ? "selected":""}}>Jordan</option>
+                            <option value="Kazakhstan" {{$user->country == "Kazakhstan" ? "selected":""}}>Kazakhstan</option>
+                            <option value="Kenya" {{$user->country == "Kenya" ? "selected":""}}>Kenya</option>
+                            <option value="Kiribati" {{$user->country == "Kiribati" ? "selected":""}}>Kiribati</option>
+                            <option value="Korea" {{$user->country == "Korea" ? "selected":""}}>Korea</option>
+                            <option value="Korea (Democratic)" {{$user->country == "Korea (Democratic)" ? "selected":""}}>Korea (Democratic)</option>
+                            <option value="Kuwait" {{$user->country == "Kuwait" ? "selected":""}}>Kuwait</option>
+                            <option value="Kyrgyzstan" {{$user->country == "Kyrgyzstan" ? "selected":""}}>Kyrgyzstan</option>
+                            <option value="Lao" {{$user->country == "Lao" ? "selected":""}}>Lao</option>
+                            <option value="Latvia" {{$user->country == "Latvia" ? "selected":""}}>Latvia</option>
+                            <option value="Lebanon" {{$user->country == "Lebanon" ? "selected":""}}>Lebanon</option>
+                            <option value="Lesotho" {{$user->country == "Lesotho" ? "selected":""}}>Lesotho</option>
+                            <option value="Liberia" {{$user->country == "Liberia" ? "selected":""}}>Liberia</option>
+                            <option value="Libyan Arab Jamahiriya" {{$user->country == "Libyan Arab Jamahiriya" ? "selected":""}}>Libyan Arab Jamahiriya</option>
+                            <option value="Liechtenstein" {{$user->country == "Liechtenstein" ? "selected":""}}>Liechtenstein</option>
+                            <option value="Lithuania" {{$user->country == "Lithuania" ? "selected":""}}>Lithuania</option>
+                            <option value="Luxembourg" {{$user->country == "Luxembourg" ? "selected":""}}>Luxembourg</option>
+                            <option value="Macao" {{$user->country == "Macao" ? "selected":""}}>Macao</option>
+                            <option value="Macedonia" {{$user->country == "Macedonia" ? "selected":""}}>Macedonia</option>
+                            <option value="Madagascar" {{$user->country == "Madagascar" ? "selected":""}}>Madagascar</option>
+                            <option value="Malawi" {{$user->country == "Malawi" ? "selected":""}}>Malawi</option>
+                            <option value="Malaysia" {{$user->country == "Malaysia" ? "selected":""}}>Malaysia</option>
+                            <option value="Maldives" {{$user->country == "Maldives" ? "selected":""}}>Maldives</option>
+                            <option value="Mali" {{$user->country == "Mali" ? "selected":""}}>Mali</option>
+                            <option value="Malta" {{$user->country == "Malta" ? "selected":""}}>Malta</option>
+                            <option value="Marshall Islands" {{$user->country == "Marshall Islands" ? "selected":""}}>Marshall Islands</option>
+                            <option value="Martinique" {{$user->country == "Martinique" ? "selected":""}}>Martinique</option>
+                            <option value="Mauritania" {{$user->country == "Mauritania" ? "selected":""}}>Mauritania</option>
+                            <option value="Mauritius" {{$user->country == "Mauritius" ? "selected":""}}>Mauritius</option>
+                            <option value="Mayotte" {{$user->country == "Mayotte" ? "selected":""}}>Mayotte</option>
+                            <option value="McDonald Islands" {{$user->country == "McDonald Islands" ? "selected":""}}>McDonald Islands</option>
+                            <option value="Mexico" {{$user->country == "Mexico" ? "selected":""}}>Mexico</option>
+                            <option value="Micronesia" {{$user->country == "Micronesia" ? "selected":""}}>Micronesia</option>
+                            <option value="Miquelon" {{$user->country == "Miquelon" ? "selected":""}}>Miquelon</option>
+                            <option value="Moldova" {{$user->country == "Moldova" ? "selected":""}}>Moldova</option>
+                            <option value="Monaco" {{$user->country == "Monaco" ? "selected":""}}>Monaco</option>
+                            <option value="Mongolia" {{$user->country == "Mongolia" ? "selected":""}}>Mongolia</option>
+                            <option value="Montenegro" {{$user->country == "Montenegro" ? "selected":""}}>Montenegro</option>
+                            <option value="Montserrat" {{$user->country == "Montserrat" ? "selected":""}}>Montserrat</option>
+                            <option value="Morocco" {{$user->country == "Morocco" ? "selected":""}}>Morocco</option>
+                            <option value="Mozambique" {{$user->country == "Mozambique" ? "selected":""}}>Mozambique</option>
+                            <option value="Myanmar" {{$user->country == "Myanmar" ? "selected":""}}>Myanmar</option>
+                            <option value="Namibia" {{$user->country == "Namibia" ? "selected":""}}>Namibia</option>
+                            <option value="Nauru" {{$user->country == "Nauru" ? "selected":""}}>Nauru</option>
+                            <option value="Nepal" {{$user->country == "Nepal" ? "selected":""}}>Nepal</option>
+                            <option value="Netherlands" {{$user->country == "Netherlands" ? "selected":""}}>Netherlands</option>
+                            <option value="Netherlands Antilles" {{$user->country == "Netherlands Antilles" ? "selected":""}}>Netherlands Antilles</option>
+                            <option value="Nevis" {{$user->country == "Nevis" ? "selected":""}}>Nevis</option>
+                            <option value="New Caledonia" {{$user->country == "New Caledonia" ? "selected":""}}>New Caledonia</option>
+                            <option value="New Zealand" {{$user->country == "New Zealand" ? "selected":""}}>New Zealand</option>
+                            <option value="Nicaragua" {{$user->country == "Nicaragua" ? "selected":""}}>Nicaragua</option>
+                            <option value="Niger" {{$user->country == "Niger" ? "selected":""}}>Niger</option>
+                            <option value="Nigeria" {{$user->country == "Nigeria" ? "selected":""}}>Nigeria</option>
+                            <option value="Niue" {{$user->country == "Niue" ? "selected":""}}>Niue</option>
+                            <option value="Norfolk Island" {{$user->country == "Norfolk Island" ? "selected":""}}>Norfolk Island</option>
+                            <option value="Northern Mariana Islands" {{$user->country == "Northern Mariana Islands" ? "selected":""}}>Northern Mariana Islands</option>
+                            <option value="Norway" {{$user->country == "Norway" ? "selected":""}}>Norway</option>
+                            <option value="Oman" {{$user->country == "Oman" ? "selected":""}}>Oman</option>
+                            <option value="Pakistan" {{$user->country == "Pakistan" ? "selected":""}}>Pakistan</option>
+                            <option value="Palau" {{$user->country == "Palau" ? "selected":""}}>Palau</option>
+                            <option value="Palestinian Territory, Occupied" {{$user->country == "Palestinian Territory, Occupied" ? "selected":""}}>Palestinian Territory, Occupied</option>
+                            <option value="Panama" {{$user->country == "Panama" ? "selected":""}}>Panama</option>
+                            <option value="Papua New Guinea" {{$user->country == "Papua New Guinea" ? "selected":""}}>Papua New Guinea</option>
+                            <option value="Paraguay" {{$user->country == "Paraguay" ? "selected":""}}>Paraguay</option>
+                            <option value="Peru" {{$user->country == "Peru" ? "selected":""}}>Peru</option>
+                            <option value="Philippines" {{$user->country == "Philippines" ? "selected":""}}>Philippines</option>
+                            <option value="Pitcairn" {{$user->country == "Pitcairn" ? "selected":""}}>Pitcairn</option>
+                            <option value="Poland" {{$user->country == "Poland" ? "selected":""}}>Poland</option>
+                            <option value="Portugal" {{$user->country == "Portugal" ? "selected":""}}>Portugal</option>
+                            <option value="Principe" {{$user->country == "Principe" ? "selected":""}}>Principe</option>
+                            <option value="Puerto Rico" {{$user->country == "Puerto Rico" ? "selected":""}}>Puerto Rico</option>
+                            <option value="Qatar" {{$user->country == "Qatar" ? "selected":""}}>Qatar</option>
+                            <option value="Reunion" {{$user->country == "Reunion" ? "selected":""}}>Reunion</option>
+                            <option value="Romania" {{$user->country == "Romania" ? "selected":""}}>Romania</option>
+                            <option value="Russian Federation" {{$user->country == "Russian Federation" ? "selected":""}}>Russian Federation</option>
+                            <option value="Rwanda" {{$user->country == "Rwanda" ? "selected":""}}>Rwanda</option>
+                            <option value="Saint Barthelemy" {{$user->country == "Saint Barthelemy" ? "selected":""}}>Saint Barthelemy</option>
+                            <option value="Saint Helena" {{$user->country == "Saint Helena" ? "selected":""}}>Saint Helena</option>
+                            <option value="Saint Kitts" {{$user->country == "Saint Kitts" ? "selected":""}}>Saint Kitts</option>
+                            <option value="Saint Lucia" {{$user->country == "Saint Lucia" ? "selected":""}}>Saint Lucia</option>
+                            <option value="Saint Martin (French part)" {{$user->country == "Saint Martin (French part)" ? "selected":""}}>Saint Martin (French part)</option>
+                            <option value="Saint Pierre" {{$user->country == "Saint Pierre" ? "selected":""}}>Saint Pierre</option>
+                            <option value="Saint Vincent" {{$user->country == "Saint Vincent" ? "selected":""}}>Saint Vincent</option>
+                            <option value="Samoa" {{$user->country == "Samoa" ? "selected":""}}>Samoa</option>
+                            <option value="San Marino" {{$user->country == "San Marino" ? "selected":""}}>San Marino</option>
+                            <option value="Sao Tome" {{$user->country == "Sao Tome" ? "selected":""}}>Sao Tome</option>
+                            <option value="Saudi Arabia" {{$user->country == "Saudi Arabia" ? "selected":""}}>Saudi Arabia</option>
+                            <option value="Senegal" {{$user->country == "Senegal" ? "selected":""}}>Senegal</option>
+                            <option value="Serbia" {{$user->country == "Serbia" ? "selected":""}}>Serbia</option>
+                            <option value="Seychelles" {{$user->country == "Seychelles" ? "selected":""}}>Seychelles</option>
+                            <option value="Sierra Leone" {{$user->country == "Sierra Leone" ? "selected":""}}>Sierra Leone</option>
+                            <option value="Singapore" {{$user->country == "Singapore" ? "selected":""}}>Singapore</option>
+                            <option value="Slovakia" {{$user->country == "Slovakia" ? "selected":""}}>Slovakia</option>
+                            <option value="Slovenia" {{$user->country == "Slovenia" ? "selected":""}}>Slovenia</option>
+                            <option value="Solomon Islands" {{$user->country == "Solomon Islands" ? "selected":""}}>Solomon Islands</option>
+                            <option value="Somalia" {{$user->country == "Somalia" ? "selected":""}}>Somalia</option>
+                            <option value="South Africa" {{$user->country == "South Africa" ? "selected":""}}>South Africa</option>
+                            <option value="South Georgia" {{$user->country == "South Georgia" ? "selected":""}}>South Georgia</option>
+                            <option value="South Sandwich Islands" {{$user->country == "South Sandwich Islands" ? "selected":""}}>South Sandwich Islands</option>
+                            <option value="Spain" {{$user->country == "Spain" ? "selected":""}}>Spain</option>
+                            <option value="Sri Lanka" {{$user->country == "Sri Lanka" ? "selected":""}}>Sri Lanka</option>
+                            <option value="Sudan" {{$user->country == "Sudan" ? "selected":""}}>Sudan</option>
+                            <option value="Suriname" {{$user->country == "Suriname" ? "selected":""}}>Suriname</option>
+                            <option value="Svalbard" {{$user->country == "Svalbard" ? "selected":""}}>Svalbard</option>
+                            <option value="Swaziland" {{$user->country == "Swaziland" ? "selected":""}}>Swaziland</option>
+                            <option value="Sweden" {{$user->country == "Sweden" ? "selected":""}}>Sweden</option>
+                            <option value="Switzerland" {{$user->country == "Switzerland" ? "selected":""}}>Switzerland</option>
+                            <option value="Syrian Arab Republic" {{$user->country == "Syrian Arab Republic" ? "selected":""}}>Syrian Arab Republic</option>
+                            <option value="Taiwan" {{$user->country == "Taiwan" ? "selected":""}}>Taiwan</option>
+                            <option value="Tajikistan" {{$user->country == "Tajikistan" ? "selected":""}}>Tajikistan</option>
+                            <option value="Tanzania" {{$user->country == "Tanzania" ? "selected":""}}>Tanzania</option>
+                            <option value="Thailand" {{$user->country == "Thailand" ? "selected":""}}>Thailand</option>
+                            <option value="The Grenadines" {{$user->country == "The Grenadines" ? "selected":""}}>The Grenadines</option>
+                            <option value="Timor-Leste" {{$user->country == "Timor-Leste" ? "selected":""}}>Timor-Leste</option>
+                            <option value="Tobago" {{$user->country == "Tobago" ? "selected":""}}>Tobago</option>
+                            <option value="Togo" {{$user->country == "Togo" ? "selected":""}}>Togo</option>
+                            <option value="Tokelau" {{$user->country == "Tokelau" ? "selected":""}}>Tokelau</option>
+                            <option value="Tonga" {{$user->country == "Tonga" ? "selected":""}}>Tonga</option>
+                            <option value="Trinidad" {{$user->country == "Trinidad" ? "selected":""}}>Trinidad</option>
+                            <option value="Tunisia" {{$user->country == "Tunisia" ? "selected":""}}>Tunisia</option>
+                            <option value="Turkey" {{$user->country == "Turkey" ? "selected":""}}>Turkey</option>
+                            <option value="Turkmenistan" {{$user->country == "Turkmenistan" ? "selected":""}}>Turkmenistan</option>
+                            <option value="Turks Islands" {{$user->country == "Turks Islands" ? "selected":""}}>Turks Islands</option>
+                            <option value="Tuvalu" {{$user->country == "Tuvalu" ? "selected":""}}>Tuvalu</option>
+                            <option value="Uganda" {{$user->country == "Uganda" ? "selected":""}}>Uganda</option>
+                            <option value="Ukraine" {{$user->country == "Ukraine" ? "selected":""}}>Ukraine</option>
+                            <option value="United Arab Emirates" {{$user->country == "United Arab Emirates" ? "selected":""}}>United Arab Emirates</option>
+                            <option value="United Kingdom" {{$user->country == "United Kingdom" ? "selected":""}}>United Kingdom</option>
+                            <option value="United States" {{$user->country == "United States" ? "selected":""}}>United States</option>
+                            <option value="Uruguay" {{$user->country == "Uruguay" ? "selected":""}}>Uruguay</option>
+                            <option value="US Minor Outlying Islands" {{$user->country == "US Minor Outlying Islands" ? "selected":""}}>US Minor Outlying Islands</option>
+                            <option value="Uzbekistan" {{$user->country == "Uzbekistan" ? "selected":""}}>Uzbekistan</option>
+                            <option value="Vanuatu" {{$user->country == "Vanuatu" ? "selected":""}}>Vanuatu</option>
+                            <option value="Vatican City State" {{$user->country == "Vatican City State" ? "selected":""}}>Vatican City State</option>
+                            <option value="Venezuela" {{$user->country == "Venezuela" ? "selected":""}}>Venezuela</option>
+                            <option value="Vietnam" {{$user->country == "Vietnam" ? "selected":""}}>Vietnam</option>
+                            <option value="Virgin Islands (British)" {{$user->country == "Virgin Islands (British)" ? "selected":""}}>Virgin Islands (British)</option>
+                            <option value="Virgin Islands (US)" {{$user->country == "Virgin Islands (US)" ? "selected":""}}>Virgin Islands (US)</option>
+                            <option value="Wallis" {{$user->country == "Wallis" ? "selected":""}}>Wallis</option>
+                            <option value="Western Sahara" {{$user->country == "Western Sahara" ? "selected":""}}>Western Sahara</option>
+                            <option value="Yemen" {{$user->country == "Yemen" ? "selected":""}}>Yemen</option>
+                            <option value="Zambia" {{$user->country == "Zambia" ? "selected":""}}>Zambia</option>
+                            <option value="Zimbabwe" {{$user->country == "Zimbabwe" ? "selected":""}}>Zimbabwe</option>
                         </select>
-
                         @if ($errors->has('country'))
                             <span class="help-block">
                                         <strong>{{ $errors->first('country') }}</strong>
