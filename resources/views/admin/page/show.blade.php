@@ -31,6 +31,18 @@
         <div class="form-group">
             <div class="row">
                 <div class="col-md-12">
+                    <label for="banner" class="col-md-2 control-label">Banner</label>
+
+                    <div class="col-md-10">
+                        <img src="{{'/storage/'.$conf->url.'/'.$conf->banner}}" class="img-responsive" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-12">
                     <label class="col-md-2 control-label">Schedule</label>
 
                     <div class="col-md-10">
