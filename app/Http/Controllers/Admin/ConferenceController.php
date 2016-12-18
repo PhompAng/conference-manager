@@ -6,6 +6,8 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Conference;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class ConferenceController extends Controller
@@ -19,6 +21,7 @@ class ConferenceController extends Controller
         return Validator::make($data, [
             'name' => 'required|max:255',
             'url' => 'required|max:20',
+            'banner' => 'max:10000000|mimes:jpeg,bmp,png',
         ]);
     }
 
@@ -26,6 +29,7 @@ class ConferenceController extends Controller
         return Validator::make($data, [
             'name' => 'required|max:255',
             'url' => 'required|max:20',
+            'banner' => 'max:10000000|mimes:jpeg,bmp,png',
             'open' => 'required|date',
             'close' => 'required|date',
             'paper_deadline' => 'required|date',
@@ -73,6 +77,14 @@ class ConferenceController extends Controller
 
         $conf = new Conference();
         $conf->fill($data);
+
+        if (!empty($data['banner'])) {
+            $file = $request->file('banner');
+            $filename = $file->getClientOriginalName();
+            Storage::disk('public')->put($conf->url . "/" .$filename, File::get($file));
+            $conf->banner = $filename;
+        }
+
         $conf->save();
 
         return redirect('/admin')->with(['success' => 'Success!']);
@@ -112,13 +124,21 @@ class ConferenceController extends Controller
     public function update(Request $request, $id)
     {
         $conf = Conference::find($id);
-        $data = $request->all();
+        $data = $request->except('banner');
         $validator = $this->editValidator($data);
         if ($validator->fails()) {
             return redirect()->back()->with(["title" => "Edit " . $conf->name, "menu" => "home", "conf" => $conf])->withInput($data)->withErrors($validator);
         }
 
         $conf->update($data);
+
+        if (!empty($request['banner'])) {
+            $file = $request->file('banner');
+            $filename = $file->getClientOriginalName();
+            Storage::disk('public')->put($conf->url . "/" .$filename, File::get($file));
+            $conf->banner = $filename;
+            $conf->save();
+        }
         return redirect('/admin')->with(['success' => 'Success!']);
     }
 
