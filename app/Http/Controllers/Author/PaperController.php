@@ -84,7 +84,9 @@ class PaperController extends Controller
     }
 
     public function getPaper($url, $user_id, $file) {
-        //TODO check user_id w/ Auth::user()
+        if (Auth::user()->id != $user_id) {
+            return abort(403, 'Unauthorized action.');
+        }
         return response(Storage::disk('local')->get($url.'/'.$user_id.'/'.$file), 200, ['Content-Type' => 'application/pdf']);
     }
 }
