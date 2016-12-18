@@ -14,9 +14,9 @@ class UpdatePapersTable extends Migration
     public function up()
     {
         Schema::table('papers', function (Blueprint $table) {
-            $table->string('abstract')->after('title');
+            $table->text('abstract')->after('title');
             $table->tinyInteger('presentation')->after('file')->nullable();
-            $table->string('authors')->after('presentation');
+            $table->text('authors')->after('presentation');
         });
     }
 
