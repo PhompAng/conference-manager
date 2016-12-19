@@ -143,6 +143,30 @@
                             </tr>
                             <tr>
                                 <td>6</td>
+                                <td>Conference Start Date</td>
+                                <td>
+                                    <input class="form-control" type="date" name="conference_start_date" value="{{$conf->conference_start_date}}" step=1 required>
+                                    @if ($errors->has('conference_start_date'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('conference_start_date') }}</strong>
+                                        </span>
+                                    @endif
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Conference End Date</td>
+                                <td>
+                                    <input class="form-control" type="date" name="conference_end_date" value="{{$conf->conference_end_date}}" step=1 required>
+                                    @if ($errors->has('conference_end_date'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('conference_end_date') }}</strong>
+                                        </span>
+                                    @endif
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
                                 <td>Close Conference</td>
                                 <td>
                                     <input class="form-control" type="datetime-local" name="close" value="{{$conf->close}}" step=1 required>

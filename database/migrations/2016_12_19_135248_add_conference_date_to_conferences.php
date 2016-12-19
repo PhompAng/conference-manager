@@ -14,7 +14,8 @@ class AddConferenceDateToConferences extends Migration
     public function up()
     {
         Schema::table('conferences', function (Blueprint $table) {
-            $table->dateTime('conference_date')->after('pre_regis')->nullable();
+            $table->date('conference_start_date')->after('pre_regis')->nullable();
+            $table->date('conference_end_date')->after('conference_start_date')->nullable();
         });
     }
 
@@ -26,7 +27,8 @@ class AddConferenceDateToConferences extends Migration
     public function down()
     {
         Schema::table('conferences', function (Blueprint $table) {
-            $table->dropColumn('conference_date');
+            $table->dropColumn('conference_start_date');
+            $table->dropColumn('conference_end_date');
         });
     }
 }

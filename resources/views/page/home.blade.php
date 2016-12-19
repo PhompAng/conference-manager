@@ -1,7 +1,7 @@
 @extends('home')
 @section('body')
     <h3 class="text-center"> Welcome to EECON-39</h3>
-    <h4 class="text-center">Conference Date : November 4-4, 2016</h4>
+    <h4 class="text-center">Conference Date : {{isset($conf->conference_start_date) ? \Carbon\Carbon::parse($conf->conference_start_date)->toFormattedDateString() . ' - ' . \Carbon\Carbon::parse($conf->conference_end_date)->toFormattedDateString() : "Soon"}}</h4>
     <hr>
     <table class="table table-bordered table-hover">
         <thead>

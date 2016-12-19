@@ -36,6 +36,8 @@ class ConferenceController extends Controller
             'acceptance' => 'required|date',
             'camera_deadline' => 'required|date',
             'pre_regis' => 'required|date',
+            'conference_start_date' => 'required|date',
+            'conference_end_date' => 'required|date',
         ]);
     }
 
