@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Conference extends Model
 {
     protected $fillable = [
-        'name', 'url', 'open', 'close', 'paper_deadline', 'acceptance', 'camera_deadline', 'pre_regis',
+        'name', 'url', 'open', 'close', 'paper_deadline', 'acceptance', 'camera_deadline', 'pre_regis', 'conference_date',
     ];
 
     public function users() {
@@ -65,5 +65,13 @@ class Conference extends Model
 
     public function setPreRegisAttribute($value) {
         $this->attributes['pre_regis'] = Carbon::parse($value);
+    }
+
+    public function getConferenceDateAttribute($value) {
+        return is_null($value) ? null:Carbon::parse($value)->format('Y-m-d\TH:i:s');
+    }
+
+    public function setConferenceDateAttribute($value) {
+        $this->attributes['conference_date'] = Carbon::parse($value);
     }
 }
