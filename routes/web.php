@@ -23,8 +23,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
 
 Route::group(['prefix' => '{url}'], function () {
     Auth::routes();
+    Route::get('/', 'HomeController@index');
     Route::group(['middleware' => 'can:author'], function () {
-        Route::get('/', 'Author\HomeController@index');
         Route::get('/edit', 'Author\EditController@index');
         Route::post('/edit', 'Author\EditController@update');
         Route::get('/paper', 'Author\PaperController@index');
@@ -38,6 +38,5 @@ Route::group(['prefix' => '{url}'], function () {
     });
 
     Route::group(['middleware' => 'can:reviewer'], function() {
-       Route::get('/', 'Reviewer\HomeController@index');
     });
 });
