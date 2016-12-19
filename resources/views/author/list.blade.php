@@ -36,7 +36,13 @@
                         <br>
                         <a href="#" class="btn btn-primary btn-sm">View comments</a>
                     </td>
-                    <td></td>
+                    <td class="text-center" style="vertical-align: middle;">
+                        @if(!isset($conf->paper_deadline) || \Carbon\Carbon::now()->gt(\Carbon\Carbon::parse($conf->paper_deadline)))
+                            <span>Time Up!!</span>
+                        @else
+
+                        @endif
+                    </td>
                 </tr>
             @endforeach
         </tbody>
