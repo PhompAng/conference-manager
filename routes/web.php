@@ -16,6 +16,7 @@
 //});
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Auth::routes();
+    Route::resource('/admin', 'AdminController');
     Route::resource('/', 'ConferenceController', ['parameters' => [
         '' => 'id'
     ]]);
