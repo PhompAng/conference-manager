@@ -47,7 +47,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <label for="topics" class="col-md-2 control-label">
-                            Topics <sup><i class="fa fa-asterisk text-danger" aria-hidden="true"></i></sup>
+                            Keywords <sup><i class="fa fa-asterisk text-danger" aria-hidden="true"></i></sup>
                         </label>
 
                         <div class="col-md-10">
@@ -77,11 +77,12 @@
                                 </label>
                                 <input type="text" class="form-control" readonly>
                             </div>
+                            <span class="help-block">
+                                <strong>PDF File only</strong>
                             @if($errors->has('file'))
-                                <span class="help-block">
                                 <strong>{{ $errors->first('file') }}</strong>
-                            </span>
                             @endif
+                            </span>
                         </div>
 
                     </div>
