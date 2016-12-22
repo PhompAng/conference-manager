@@ -20,7 +20,7 @@
                     <td>{{$paper->id}}</td>
                     <td>
                         {{$paper->title}}<br>
-                        Topics:
+                        Keywords:
                         @foreach($paper->topics as $topic)
                             {{$topic}}
                         @endforeach
