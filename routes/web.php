@@ -42,5 +42,10 @@ Route::group(['prefix' => '{url}'], function () {
     });
 
     Route::group(['middleware' => 'can:reviewer'], function() {
+        Route::get('/list', 'Reviewer\PaperListController@index');
+        Route::get('/{user_id}/{file}', [
+            'as' => 'getPaper',
+            'uses' => 'Reviewer\PaperController@getPaper'
+        ]);
     });
 });

@@ -13,7 +13,7 @@
                     <li role="presentation" class="{{ $menu == "camera" ? "active":"" }}"><a href="#">Camera Ready Submission</a></li>
                 @endif
                 @if (Auth::user()->can('reviewer'))
-
+                    <li role="presentation" class="{{ $menu == "list" ? "active":"" }}"><a href="{{URL($prefix."/list")}}">Paper List</a></li>
                 @endif
                 <li role="presentation">
                     <a href="{{ url($prefix.'/logout') }}"
