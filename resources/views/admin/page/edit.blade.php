@@ -65,6 +65,24 @@
             </div>
         </div>
 
+        <div class="form-group{{ $errors->has('area') ? " has-error":"" }}">
+            <div class="row">
+                <div class="col-md-12">
+                    <label for="area" class="col-md-2 control-label">Area</label>
+
+                    <div class="col-md-10">
+                        <select id="area" class="form-control" name="area[]" multiple>
+                        </select>
+                    </div>
+                    @if($errors->has('area'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('area') }}</strong>
+                        </span>
+                    @endif
+                </div>
+            </div>
+        </div>
+
         <div class="form-group{{ $errors->has('open') || $errors->has('close') || $errors->has('paper_deadline') || $errors->has('acceptance') || $errors->has('camera_deadline') || $errors->has('pre_regis') ? ' has-error':'' }}">
             <div class="row">
                 <div class="col-md-12">
@@ -206,6 +224,11 @@
 
             // We can watch for our custom `fileselect` event like this
             $(document).ready( function() {
+                $("#area").select2({
+                    tags: true,
+                    tokenSeparators: [',', ' ']
+                });
+                
                 $(':file').on('fileselect', function(event, numFiles, label) {
                     var input = $(this).parents('.input-group').find(':text'),
                         log = numFiles > 1 ? numFiles + ' files selected' : label;
