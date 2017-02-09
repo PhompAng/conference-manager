@@ -23,8 +23,4 @@ class PaperController extends Controller
         $this->middleware('auth');
         $this->prefix = $request->segment(1);
     }
-
-    public function getPaper($url, $user_id, $file) {
-        return response(Storage::disk('local')->get($url.'/'.$user_id.'/'.$file), 200, ['Content-Type' => 'application/pdf']);
-    }
 }

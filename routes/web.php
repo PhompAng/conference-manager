@@ -33,19 +33,14 @@ Route::group(['prefix' => '{url}'], function () {
         Route::post('/edit', 'Author\EditController@update');
         Route::get('/paper', 'Author\PaperController@index');
         Route::post('/paper', 'Author\PaperController@submit');
-        Route::get('/list', 'Author\PaperListController@index');
-
-        Route::get('/{user_id}/{file}', [
-            'as' => 'getPaper',
-            'uses' => 'Author\PaperController@getPaper'
-        ]);
     });
 
     Route::group(['middleware' => 'can:reviewer'], function() {
-        Route::get('/list', 'Reviewer\PaperListController@index');
-        Route::get('/{user_id}/{file}', [
-            'as' => 'getPaper',
-            'uses' => 'Reviewer\PaperController@getPaper'
-        ]);
     });
+
+    Route::get('/list', 'PaperListController@index');
+    Route::get('/{user_id}/{file}', [
+        'as' => 'getPaper',
+        'uses' => 'ViewPaperController@getPaper'
+    ]);
 });
