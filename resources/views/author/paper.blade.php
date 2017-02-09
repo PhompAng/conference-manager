@@ -43,6 +43,27 @@
                 </div>
             </div>
 
+            <div class="form-group{{ $errors->has('area') ? " has-error":"" }}">
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="area" class="col-md-2 control-label">Area <sup><i class="fa fa-asterisk text-danger" aria-hidden="true"></i></sup></label>
+
+                        <div class="col-md-10">
+                            <select id="area" class="form-control" name="area" required>
+                                @foreach($conf->areas as $area)
+                                    <option value="{{$area}}" {{old('area') == $area ? "selected":""}}>{{$area}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        @if($errors->has('area'))
+                            <span class="help-block">
+                            <strong>{{ $errors->first('area') }}</strong>
+                        </span>
+                        @endif
+                    </div>
+                </div>
+            </div>
+
             <div class="form-group{{ $errors->has('topics') ? " has-error":"" }}">
                 <div class="row">
                     <div class="col-md-12">
@@ -501,6 +522,7 @@
                     tags: true,
                     tokenSeparators: [',', ' ']
                 });
+                $("#area").select2();
 
 
                 $("#add_author").click(function (e) {
