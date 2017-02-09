@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Conference extends Model
 {
     protected $fillable = [
-        'name', 'url', 'open', 'close', 'paper_deadline', 'acceptance', 'camera_deadline', 'pre_regis', 'conference_start_date', 'conference_end_date',
+        'name', 'url', 'area', 'open', 'close', 'paper_deadline', 'acceptance', 'camera_deadline', 'pre_regis', 'conference_start_date', 'conference_end_date',
     ];
 
     public function users() {
@@ -17,6 +17,14 @@ class Conference extends Model
 
     public function papers() {
         return $this->hasMany('App\Model\Paper');
+    }
+
+    public function getAreaAttribute($value) {
+        return json_decode($value, true);
+    }
+
+    public function setAreaAttribute($value) {
+        $this->attributes['area'] = json_encode($value, JSON_UNESCAPED_UNICODE);
     }
 
     public function getOpenAttribute($value) {
