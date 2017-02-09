@@ -30,7 +30,7 @@ class ConferenceController extends Controller
             'name' => 'required|max:255',
             'url' => 'required|max:20',
             'banner' => 'max:10000000|mimes:jpeg,bmp,png',
-            'area.*' => 'max:255',
+            'areas.*' => 'max:255',
             'open' => 'required|date',
             'close' => 'required|date',
             'paper_deadline' => 'required|date',
