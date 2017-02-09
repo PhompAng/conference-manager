@@ -53,6 +53,17 @@ class User extends Authenticatable
         }
     }
 
+    public static function getRole($value) {
+        switch ($value) {
+            case 1:
+                return "Author";
+            case 2:
+                return "Reviewer";
+            default:
+                return "";
+        }
+    }
+
     public function conference() {
         return $this->belongsTo('App\Model\Conference');
     }

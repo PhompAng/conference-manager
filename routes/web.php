@@ -23,6 +23,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::resource('/', 'ConferenceController', ['parameters' => [
         '' => 'id'
     ]]);
+    Route::resource('/{conf}/user', 'UsersController');
 });
 
 Route::group(['prefix' => '{url}'], function () {
