@@ -23,15 +23,25 @@
                         <form action="{{URL::route('user.destroy', ["conf" => $conf->id, "user"=>$user->id])}}" method="post">
                             {!! csrf_field() !!}
                             {!! method_field('DELETE') !!}
-                            <a href="{{URL::route("user.show" , ["conf" => $conf->id, "user" => $user->id])}}" class="btn btn-default btn-xs" data-toggle="tooltip"  title="View" disabled>
-                                <i class="fa fa-eye" aria-hidden="true"></i>
-                            </a>
-                            <a href="{{URL::route('user.edit', ["conf" => $conf->id, "user" => $user->id])}}" class="btn btn-default btn-xs" data-toggle="tooltip"  title="Edit" disabled>
-                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                            </a>
-                            <button type="submit" class="btn btn-danger btn-xs" data-toggle="tooltip" title="Delete">
-                                <i class="fa fa-times"></i>
-                            </button>
+                            <span>
+                                <a href="{{URL::route("user.show" , ["conf" => $conf->id, "user" => $user->id])}}" class="btn btn-default btn-xs" data-toggle="tooltip"  title="View" disabled>
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                </a>
+                                View
+                            </span>
+                            <span>
+                                <a href="{{URL::route('user.edit', ["conf" => $conf->id, "user" => $user->id])}}" class="btn btn-default btn-xs" data-toggle="tooltip"  title="Edit" disabled>
+                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                </a>
+                                Edit
+                            </span>
+                            <br>
+                            <span>
+                                <button type="submit" class="btn btn-danger btn-xs" data-toggle="tooltip" title="Delete">
+                                    <i class="fa fa-times"></i>
+                                </button>
+                                Delete
+                            </span>
                         </form>
                     </td>
                 </tr>

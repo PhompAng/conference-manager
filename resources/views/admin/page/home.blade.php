@@ -23,18 +23,31 @@
                         <form action="{{URL::route('destroy', ["id"=>$conf->id])}}" method="post">
                             {!! csrf_field() !!}
                             {!! method_field('DELETE') !!}
-                            <a href="{{URL::route("show" , ["id" => $conf->id])}}" class="btn btn-default btn-xs" data-toggle="tooltip"  title="View">
-                                <i class="fa fa-eye" aria-hidden="true"></i>
-                            </a>
-                            <a href="{{URL::route('edit', ["id" => $conf->id])}}" class="btn btn-default btn-xs" data-toggle="tooltip"  title="Edit">
-                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                            </a>
-                            <a href="{{URL::route('user.index', ["conf" => $conf->id])}}" class="btn btn-default btn-xs" data-toggle="tooltip"  title="Users">
-                                <i class="fa fa-users" aria-hidden="true"></i>
-                            </a>
-                            <button type="submit" class="btn btn-danger btn-xs" data-toggle="tooltip" title="Delete">
-                                <i class="fa fa-times"></i>
-                            </button>
+                            <span>
+                                <a href="{{URL::route("show" , ["id" => $conf->id])}}" class="btn btn-default btn-xs" data-toggle="tooltip"  title="View">
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                </a>
+                                View
+                            </span>
+                            <span>
+                                <a href="{{URL::route('edit', ["id" => $conf->id])}}" class="btn btn-default btn-xs" data-toggle="tooltip"  title="Edit">
+                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                </a>
+                                Edit
+                            </span>
+                            <br>
+                            <span>
+                                <a href="{{URL::route('user.index', ["conf" => $conf->id])}}" class="btn btn-default btn-xs" data-toggle="tooltip"  title="Users">
+                                    <i class="fa fa-users" aria-hidden="true"></i>
+                                </a>
+                                Users
+                            </span>
+                            <span>
+                                <button type="submit" class="btn btn-danger btn-xs" data-toggle="tooltip" title="Delete">
+                                    <i class="fa fa-times"></i>
+                                </button>
+                                Delete
+                            </span>
                         </form>
                     </td>
                 </tr>
