@@ -72,9 +72,11 @@
 
                     <div class="col-md-10">
                         <select id="areas" class="form-control" name="areas[]" multiple>
-                            @foreach($conf->areas as $area)
-                                <option value="{{$area}}" selected>{{$area}}</option>
-                            @endforeach
+                            @if(!is_null($conf->areas))
+                                @foreach($conf->areas as $area)
+                                    <option value="{{$area}}" selected>{{$area}}</option>
+                                @endforeach
+                            @endif
                         </select>
                     </div>
                     @if($errors->has('areas'))
