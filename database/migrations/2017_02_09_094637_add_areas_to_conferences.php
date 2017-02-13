@@ -14,7 +14,7 @@ class AddAreasToConferences extends Migration
     public function up()
     {
         Schema::table('conferences', function (Blueprint $table) {
-            $table->text('areas')->after('banner');
+            $table->text('areas')->nullable()->after('banner');
         });
     }
 
