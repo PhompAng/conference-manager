@@ -78,12 +78,17 @@
                                 @endforeach
                             @endif
                         </select>
-                    </div>
-                    @if($errors->has('areas'))
+
+                        @if($errors->has('areas'))
                         <span class="help-block">
                             <strong>{{ $errors->first('areas') }}</strong>
                         </span>
-                    @endif
+                        @else
+                        <span class="help-block">
+                            <strong>Areas separated with '.'</strong>
+                        </span>
+                        @endif
+                    </div>
                 </div>
             </div>
         </div>
@@ -231,7 +236,7 @@
             $(document).ready( function() {
                 $("#areas").select2({
                     tags: true,
-                    tokenSeparators: [',', ' ']
+                    tokenSeparators: ['.']
                 });
 
                 $(':file').on('fileselect', function(event, numFiles, label) {
