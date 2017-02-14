@@ -34,6 +34,14 @@ Route::group(['prefix' => '{url}'], function () {
         Route::post('/edit', 'Author\EditController@update');
         Route::get('/paper', 'Author\PaperController@index');
         Route::post('/paper', 'Author\PaperController@submit');
+        Route::get('/paper/{id}/edit', [
+            'as' => 'editPaper',
+            'uses' => 'Author\PaperController@edit'
+        ]);
+        Route::put('/paper/{id}', [
+            'as' => 'updatePaper',
+            'uses' => 'Author\PaperController@update'
+        ]);
     });
 
     Route::group(['middleware' => 'can:reviewer'], function() {

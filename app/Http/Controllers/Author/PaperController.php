@@ -40,6 +40,17 @@ class PaperController extends Controller
         ]);
     }
 
+    protected function editValidator(array $data) {
+        return Validator::make($data, [
+            'title' => 'required|max:255',
+            'abstract' => 'required',
+            'area' => 'required|max:255',
+            'topics.*' => 'required|max:255',
+            'presentation' => 'in:1,2',
+            'file' => 'required|max:10000000|mimes:pdf',
+        ]);
+    }
+
     public function submit(Request $request) {
         $data = $request->all();
         $conf = Conference::where('url', $this->prefix)->first();
@@ -82,5 +93,35 @@ class PaperController extends Controller
         $conf = Conference::where('url', $this->prefix)->first();
         $user = Auth::user();
         return view('author.paper', ["prefix" => $this->prefix, "menu" => "paper", "title" => "Paper Submission", "conf" => $conf, "user" => $user]);
+    }
+
+    public function edit($url=null, $id) {
+        $conf = Conference::where('url', $this->prefix)->first();
+        $user = Auth::user();
+        $paper = Paper::find($id);
+        return view('author.paper_edit', ["prefix" => $this->prefix, "menu" => "paper", "title" => "Paper Submission", "conf" => $conf, "user" => $user, "paper" => $paper]);
+    }
+
+    public function update(Request $request, $url=null, $id) {
+        $data = $request->all();
+        $conf = Conference::where('url', $this->prefix)->first();
+        $user = Auth::user();
+        $paper = Paper::find($id);
+
+        $validator = $this->editValidator($data);
+        if ($validator->fails()) {
+            return redirect()->back()->with(["prefix" => $this->prefix, "menu" => "paper", "title" => "Paper Submission", "conf" => $conf, "user" => $user, "paper" => $paper])->withInput($data)->withErrors($validator);
+        }
+
+        $paper->update($data);
+
+        $file = $request->file('file');
+        $filename = $this->prefix . "/" . $user->id . "/" . $paper->id . "_" . str_random(10).'.pdf';
+        Storage::disk('local')->put($filename,  File::get($file));
+
+        $paper->file = $filename;
+        $paper->save();
+
+        return redirect($this->prefix.'/list')->with(['success' => 'Success!']);
     }
 }
