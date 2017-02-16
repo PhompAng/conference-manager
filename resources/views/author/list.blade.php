@@ -34,9 +34,11 @@
                     <td class="text-center">
                         {{$paper->status}}
                         <br>
-                        <a href="#" class="btn btn-primary btn-sm">View comments</a>
+                        @if($paper->status != "withdraw")
+                            <a href="#" class="btn btn-primary btn-sm">View comments</a>
+                        @endif
                     </td>
-                    <td class="text-center" style="vertical-align: middle;">
+                    <td style="vertical-align: middle;">
                         @if(!isset($conf->paper_deadline) || \Carbon\Carbon::now()->gt(\Carbon\Carbon::parse($conf->paper_deadline)))
                             <span>Time Up!!</span>
                         @else
@@ -46,6 +48,18 @@
                                 </a>
                                 Edit
                             </span>
+                            @if($paper->status != "withdraw")
+                            <form action="{{URL::route('paper.destroy', ["url"=>$prefix, "id" => $paper->id])}}" method="post">
+                                {!! csrf_field() !!}
+                                {!! method_field('DELETE') !!}
+                                <span>
+                                <button type="submit" class="btn btn-danger btn-xs" data-toggle="tooltip" title="Withdraw">
+                                    <i class="fa fa-flag" aria-hidden="true"></i>
+                                </button>
+                                Withdraw
+                            </span>
+                            </form>
+                            @endif
                         @endif
                     </td>
                 </tr>

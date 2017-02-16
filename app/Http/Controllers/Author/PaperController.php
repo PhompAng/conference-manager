@@ -124,4 +124,12 @@ class PaperController extends Controller
 
         return redirect($this->prefix.'/list')->with(['success' => 'Success!']);
     }
+
+    public function destroy(Request $request, $url, $id) {
+        $paper = Paper::find($id);
+        $paper->status = "withdraw";
+        $paper->save();
+
+        return redirect()->back()->with(['success' => 'Withdraw Success!']);
+    }
 }
