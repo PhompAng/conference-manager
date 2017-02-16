@@ -12,8 +12,12 @@
                     <li role="presentation" class="{{ $menu == "list" ? "active":"" }}"><a href="{{URL($prefix."/list")}}">Paper List</a></li>
                     <li role="presentation" class="{{ $menu == "camera" ? "active":"" }}"><a href="#">Camera Ready Submission</a></li>
                 @endif
-                @if (Auth::user()->can('reviewer'))
+                @if (Auth::user()->can('reviewer') || Auth::user()->can('tpc'))
                     <li role="presentation" class="{{ $menu == "list" ? "active":"" }}"><a href="{{URL($prefix."/list")}}">Paper List</a></li>
+                @endif
+                @if(Auth::user()->can('tpc'))
+                    {{--<li role="presentation" class="{{ $menu == "report" ? "active":"" }}"><a href="{{URL($prefix."/list")}}">Report</a></li>--}}
+                    <li role="presentation" class="{{ $menu == "author" ? "active":"" }}"><a href="{{URL($prefix."/author")}}">Authors</a></li>
                 @endif
                 <li role="presentation">
                     <a href="{{ url($prefix.'/logout') }}"
