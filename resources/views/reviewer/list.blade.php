@@ -8,16 +8,19 @@
         <thead>
         <tr>
             <th>Code</th>
+            <th>Area</th>
             <th>Title</th>
             <th>Paper</th>
             <th>Status</th>
-            <th>Action</th>
+            <th>Submitter</th>
+            <th>Country</th>
         </tr>
         </thead>
         <tbody>
         @foreach($papers as $paper)
             <tr>
                 <td>{{$paper->id}}</td>
+                <td>{{$paper->area}}</td>
                 <td>
                     {{$paper->title}}<br>
                     Keywords:
@@ -34,13 +37,12 @@
                 <td class="text-center">
                     {{$paper->status}}
                 </td>
-                <td class="text-center" style="vertical-align: middle;">
-                    @if(!isset($conf->acceptance) || \Carbon\Carbon::now()->gt(\Carbon\Carbon::parse($conf->acceptance)))
-                        <span>Time Up!!</span>
-                    @else
-
-                    @endif
+                <td class="text-center">
+                    {{App\User::getAcademicPosition($paper->user->academic_position)}} {{App\User::getTitle($paper->user->title)}} {{$paper->user->name}} {{$paper->user->family_name}}
+                    <br>
+                    {{$paper->user->email}}
                 </td>
+                <td>{{$paper->user->country}}</td>
             </tr>
         @endforeach
         </tbody>
