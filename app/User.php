@@ -59,6 +59,8 @@ class User extends Authenticatable
                 return "Author";
             case 2:
                 return "Reviewer";
+            case 3:
+                return "TPC";
             default:
                 return "";
         }

@@ -85,4 +85,20 @@ class UsersController extends Controller
         User::find($id)->delete();
         return redirect('/admin/'.$conf.'/user')->with(['success' => "Delete Success!"]);
     }
+
+    public function makeTPC($conf, $id) {
+        $user = User::find($id);
+        $user->role = 3;
+        $user->save();
+
+        return redirect('/admin/'.$conf.'/user')->with(['success' => "Make TPC Success!"]);
+    }
+
+    public function removeTPC($conf, $id) {
+        $user = User::find($id);
+        $user->role = 2;
+        $user->save();
+
+        return redirect('/admin/'.$conf.'/user')->with(['success' => "Remove TPC Success!"]);
+    }
 }
