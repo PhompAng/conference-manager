@@ -49,7 +49,7 @@
                                 Edit
                             </span>
                             @if($paper->status != "withdraw")
-                            <form action="{{URL::route('paper.destroy', ["url"=>$prefix, "id" => $paper->id])}}" method="post">
+                            <form action="{{URL::route('paper.destroy', ["url"=>$prefix, "id" => $paper->id])}}" method="post" onsubmit="return confirm('Do you want to withdraw this paper ?')">
                                 {!! csrf_field() !!}
                                 {!! method_field('DELETE') !!}
                                 <span>

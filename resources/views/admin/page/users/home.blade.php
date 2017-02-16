@@ -56,7 +56,7 @@
                             </span>
                             </form>
                         @endif
-                        <form action="{{URL::route('user.destroy', ["conf" => $conf->id, "user"=>$user->id])}}" method="post">
+                        <form action="{{URL::route('user.destroy', ["conf" => $conf->id, "user"=>$user->id])}}" method="post" onsubmit="return confirm('Do you want to remove this user ?')">
                             {!! csrf_field() !!}
                             {!! method_field('DELETE') !!}
                             <span>

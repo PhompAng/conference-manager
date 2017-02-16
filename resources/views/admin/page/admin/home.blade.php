@@ -24,7 +24,7 @@
                     <td>{{$admin->created_at}}</td>
                     <td>{{$admin->updated_at}}</td>
                     <td>
-                        <form action="{{URL::route('admin.destroy', ["id"=>$admin->id])}}" method="post">
+                        <form action="{{URL::route('admin.destroy', ["id"=>$admin->id])}}" method="post" onsubmit="return confirm('Do you want to remove this user ?')">
                             {!! csrf_field() !!}
                             {!! method_field('DELETE') !!}
                             <span>

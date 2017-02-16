@@ -20,7 +20,7 @@
                     <td><a href="{{URL::route("show" , ["id" => $conf->id])}}">{{$conf->name}}</a></td>
                     <td><a href="{{URL::to($conf->url)}}">{{URL::to($conf->url)}}</a></td>
                     <td>
-                        <form action="{{URL::route('destroy', ["id"=>$conf->id])}}" method="post">
+                        <form action="{{URL::route('destroy', ["id"=>$conf->id])}}" method="post" onsubmit="return confirm('Do you want to remove this conference ?')">
                             {!! csrf_field() !!}
                             {!! method_field('DELETE') !!}
                             <span>
