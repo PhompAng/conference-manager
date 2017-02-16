@@ -47,7 +47,8 @@ Route::group(['prefix' => '{url}'], function () {
     });
 
     Route::group(['middleware' => 'can:tpc'], function () {
-       Route::get('/author', 'TPC\AuthorController@index');
+        Route::get('/author', 'TPC\AuthorController@index');
+        Route::get('/reviewer', 'TPC\ReviewerController@index');
     });
 
     Route::get('/list', 'PaperListController@index');

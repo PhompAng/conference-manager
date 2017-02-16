@@ -18,6 +18,7 @@
                 @if(Auth::user()->can('tpc'))
                     {{--<li role="presentation" class="{{ $menu == "report" ? "active":"" }}"><a href="{{URL($prefix."/list")}}">Report</a></li>--}}
                     <li role="presentation" class="{{ $menu == "author" ? "active":"" }}"><a href="{{URL($prefix."/author")}}">Authors</a></li>
+                    <li role="presentation" class="{{ $menu == "reviewer" ? "active":"" }}"><a href="{{URL($prefix."/reviewer")}}">Reviewers</a></li>
                 @endif
                 <li role="presentation">
                     <a href="{{ url($prefix.'/logout') }}"
