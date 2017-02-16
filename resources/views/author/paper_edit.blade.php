@@ -3,7 +3,7 @@
     @if(!isset($conf->paper_deadline) || \Carbon\Carbon::now()->gt(\Carbon\Carbon::parse($conf->paper_deadline)))
         <h1 class="text-center">Time Up!!</h1>
     @else
-        <form id="form" action="{{ URL::route('updatePaper', ["url"=>$prefix, "id" => $paper->id]) }}" method="POST" enctype="multipart/form-data" role="form" class="form-horizontal">
+        <form id="form" action="{{ URL::route('paper.update', ["url"=>$prefix, "id" => $paper->id]) }}" method="POST" enctype="multipart/form-data" role="form" class="form-horizontal">
 
             {{ csrf_field() }}
             {{ method_field('PUT') }}

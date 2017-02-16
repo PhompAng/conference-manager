@@ -51,7 +51,7 @@ class PaperController extends Controller
         ]);
     }
 
-    public function submit(Request $request) {
+    public function store(Request $request) {
         $data = $request->all();
         $conf = Conference::where('url', $this->prefix)->first();
         $user = Auth::user();

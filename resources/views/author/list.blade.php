@@ -41,7 +41,7 @@
                             <span>Time Up!!</span>
                         @else
                             <span>
-                                <a href="{{URL::route('editPaper', ["url"=>$prefix, "id" => $paper->id])}}" class="btn btn-default btn-xs" data-toggle="tooltip"  title="Edit">
+                                <a href="{{URL::route('paper.edit', ["url"=>$prefix, "id" => $paper->id])}}" class="btn btn-default btn-xs" data-toggle="tooltip"  title="Edit">
                                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                 </a>
                                 Edit
