@@ -14,6 +14,7 @@
             <th>Status</th>
             <th>Submitter</th>
             <th>Country</th>
+            <th>Action</th>
         </tr>
         </thead>
         <tbody>
@@ -43,6 +44,14 @@
                     {{$paper->user->email}}
                 </td>
                 <td>{{$paper->user->country}}</td>
+                <td>
+                    <span>
+                        <a href="{{URL::route('review.index', ["url"=>$prefix, "id" => $paper->id])}}" class="btn btn-default btn-xs" data-toggle="tooltip"  title="Review">
+                            <i class="fa fa-comment" aria-hidden="true"></i>
+                        </a>
+                        Review
+                    </span>
+                </td>
             </tr>
         @endforeach
         </tbody>

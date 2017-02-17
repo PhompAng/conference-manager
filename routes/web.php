@@ -44,6 +44,10 @@ Route::group(['prefix' => '{url}'], function () {
     });
 
     Route::group(['middleware' => 'can:reviewer'], function() {
+        Route::get('/review/{paper_id}', [
+            'as' => 'review.index',
+            'uses' => 'Reviewer\ReviewController@index'
+        ]);
     });
 
     Route::group(['middleware' => 'can:tpc'], function () {
