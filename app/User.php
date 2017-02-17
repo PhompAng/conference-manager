@@ -73,4 +73,9 @@ class User extends Authenticatable
     public function papers() {
         return $this->hasMany('App\Model\Paper');
     }
+
+    public function reviews() {
+        return $this->belongsToMany('App\Model\Paper', 'reviewer_paper')
+            ->withPivot(['comment_str', 'comment_weak', 'comment_reviewer', 'score', 'bpp_recommend']);
+    }
 }

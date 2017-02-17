@@ -31,4 +31,9 @@ class Paper extends Model
     public function conference() {
         return $this->belongsTo('App\Model\Conference');
     }
+
+    public function reviewers() {
+        return $this->belongsToMany('App\User', 'reviewer_paper')
+            ->withPivot(['comment_str', 'comment_weak', 'comment_reviewer', 'score', 'bpp_recommend']);
+    }
 }
