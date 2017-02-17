@@ -12,6 +12,7 @@
             <th>Affiliation</th>
             <th>Email</th>
             <th>Country</th>
+            <th>Role</th>
             <th>Action</th>
         </tr>
         </thead>
@@ -31,7 +32,36 @@
                 <td class="text-center" style="vertical-align: middle;">
                     {{$reviewer->country}}
                 </td>
-                <td></td>
+                <td class="text-center">
+                    {{App\User::getRole($reviewer->role)}}
+                </td>
+                <td>
+                @if($user->id != $reviewer->id)
+                    @if($reviewer->role == 2)
+                        <form action="{{URL::to($conf->url.'/'.$reviewer->id.'/tpc')}}" method="post">
+                            {!! csrf_field() !!}
+                            <span>
+                            <button type="submit" class="btn btn-primary btn-xs" data-toggle="tooltip" title="Make TPC">
+                                <i class="fa fa-user-circle" aria-hidden="true"></i>
+                            </button>
+                            Make TPC
+                        </span>
+                        </form>
+                    @endif
+                    @if($reviewer->role == 3)
+                        <form action="{{URL::to($conf->url.'/'.$reviewer->id.'/tpc')}}" method="post">
+                            {!! csrf_field() !!}
+                            {!! method_field('DELETE') !!}
+                            <span>
+                                <button type="submit" class="btn btn-primary btn-xs" data-toggle="tooltip" title="Remove TPC">
+                                    <i class="fa fa-user-circle" aria-hidden="true"></i>
+                                </button>
+                                Remove TPC
+                            </span>
+                        </form>
+                    @endif
+                @endif
+                </td>
             </tr>
         @endforeach
         </tbody>
