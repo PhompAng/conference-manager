@@ -1,8 +1,8 @@
 @extends('admin.layouts.app')
 @section('content')
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <ul class="nav nav-pills nav-stacked">
                     <li role="presentation" class="{{$menu == "home" ? "active":""}}"><a href="{{URL("/admin")}}">Home</a></li>
                     <li role="presentation" class="{{$menu == "add" ? "active":""}}"><a href="{{URL("/admin/create")}}">Create Conference</a></li>
@@ -21,7 +21,7 @@
                 </ul>
             </div>
 
-            <div class="col-md-9">
+            <div class="col-md-10">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         {{$title}}

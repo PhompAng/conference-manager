@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-2">
             <ul class="nav nav-pills nav-stacked">
                 <li role="presentation" class="{{ $menu == "home" ? "active":"" }}"><a href="{{URL($prefix."/")}}">Home</a></li>
                 @if (Auth::user()->can('author'))
@@ -33,7 +33,7 @@
                 </li>
             </ul>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-10">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     {{$title}}
