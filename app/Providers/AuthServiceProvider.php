@@ -31,7 +31,7 @@ class AuthServiceProvider extends ServiceProvider
         });
 
         Gate::define('reviewer', function (User $user) {
-            return $user->role == 2;
+            return $user->role >= 2;
         });
 
         Gate::define('tpc', function (User $user) {
