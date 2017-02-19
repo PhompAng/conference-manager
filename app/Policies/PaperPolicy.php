@@ -12,14 +12,15 @@ class PaperPolicy
 
     public function before($user, $ability)
     {
-        if ($ability == 'review') {
-//            if ($user->role == 3) {
-//                return true;
-//            }
-        } else {
-            if ($user->role >= 2) {
-                return true;
-            }
+        switch ($ability) {
+            case 'review':
+                break;
+            case 'assign':
+                break;
+            default:
+                if ($user->role >= 2) {
+                    return true;
+                }
         }
     }
 
@@ -72,5 +73,9 @@ class PaperPolicy
 
     public function review(User $user, Paper $paper) {
         return $paper->reviewers->contains('id', $user->id);
+    }
+
+    public function assign(User $user, Paper $paper) {
+        return $user->role == 3;
     }
 }

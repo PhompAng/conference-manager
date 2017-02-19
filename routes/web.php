@@ -48,6 +48,14 @@ Route::group(['prefix' => '{url}'], function () {
             'as' => 'review.index',
             'uses' => 'Reviewer\ReviewController@index'
         ]);
+        Route::post('/review/{paper_id}/{user_id}/assign', [
+            'as' => 'review.assign',
+            'uses' => 'Reviewer\ReviewController@assign'
+        ]);
+        Route::delete('/review/{paper_id}/{user_id}/assign', [
+            'as' => 'review.unassign',
+            'uses' => 'Reviewer\ReviewController@unassign'
+        ]);
     });
 
     Route::group(['middleware' => 'can:tpc'], function () {

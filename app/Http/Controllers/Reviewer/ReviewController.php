@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Reviewer;
 
+use App\Model\Paper;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -16,7 +17,10 @@ class ReviewController extends Controller
     }
 
     public function index($url=null, $paper_id) {
-        dd($paper_id);
+        $paper = Paper::find($paper_id);
+//        foreach ($paper->reviewers as $rew) {
+//            print_r($rew->pivot->comment_str);
+//        }
     }
 
     /**
@@ -83,5 +87,21 @@ class ReviewController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function assign($url=null, $paper_id, $user_id) {
+        $paper = Paper::find($paper_id);
+        $this->authorize('assign', $paper);
+
+        $paper->reviewers()->attach($user_id);
+        return redirect()->back()->with(['success' => 'Assign reviewer success!']);
+    }
+
+    public function unassign($url=null, $paper_id, $user_id) {
+        $paper = Paper::find($paper_id);
+        $this->authorize('assign', $paper);
+
+        $paper->reviewers()->detach($user_id);
+        return redirect()->back()->with(['success' => 'Unassign reviewer success!']);
     }
 }

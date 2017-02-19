@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Model\Paper;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Conference;
@@ -30,7 +31,8 @@ class PaperListController extends Controller
             $papers = $user->papers()->where('conference_id', $conf->id)->get();return view('author.list', ["prefix" => $this->prefix, "menu" => "list", "title" => "Paper List", "conf" => $conf, "papers" => $papers]);
         } else {
             $papers = Paper::where('conference_id', $conf->id)->get();
-            return view('reviewer.list', ["prefix" => $this->prefix, "menu" => "list", "title" => "Paper List", "conf" => $conf, "papers" => $papers]);
+            $reviewers = $conf->users->where('role', '>=', 2);
+            return view('reviewer.list', ["prefix" => $this->prefix, "menu" => "list", "title" => "Paper List", "conf" => $conf, "papers" => $papers, "reviewers" => $reviewers]);
         }
 
     }
