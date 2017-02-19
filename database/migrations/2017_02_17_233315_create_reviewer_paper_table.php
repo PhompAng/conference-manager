@@ -19,8 +19,8 @@ class CreateReviewerPaperTable extends Migration
             $table->text('comment_str')->nullable();
             $table->text('comment_weak')->nullable();
             $table->text('comment_reviewer')->nullable();
-            $table->text('score');
-            $table->boolean('bpp_recommend');
+            $table->text('score')->nullable();
+            $table->boolean('bpp_recommend')->nullable();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('paper_id')->references('id')->on('papers')->onDelete('cascade');
