@@ -72,10 +72,10 @@ class PaperPolicy
     }
 
     public function review(User $user, Paper $paper) {
-        return $paper->reviewers->contains('id', $user->id);
+        return $paper->reviewers->contains('id', $user->id) && $paper->status != 'withdraw';
     }
 
     public function assign(User $user, Paper $paper) {
-        return $user->role == 3;
+        return $user->role == 3 && $paper->status != 'withdraw';
     }
 }
