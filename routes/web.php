@@ -44,10 +44,7 @@ Route::group(['prefix' => '{url}'], function () {
     });
 
     Route::group(['middleware' => 'can:reviewer'], function() {
-        Route::get('/review/{paper_id}', [
-            'as' => 'review.index',
-            'uses' => 'Reviewer\ReviewController@index'
-        ]);
+        Route::resource('/{paper_id}/review', 'Reviewer\ReviewController');
         Route::post('/review/{paper_id}/{user_id}/assign', [
             'as' => 'review.assign',
             'uses' => 'Reviewer\ReviewController@assign'

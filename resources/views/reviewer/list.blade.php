@@ -47,7 +47,7 @@
                 <td>
                     @can('review', $paper)
                     <span>
-                        <a href="{{URL::route('review.index', ["url"=>$prefix, "id" => $paper->id])}}" class="btn btn-default btn-xs" data-toggle="tooltip"  title="Review">
+                        <a href="{{URL::route('review.create', ["url"=>$prefix, "paper_id" => $paper->id])}}" class="btn btn-default btn-xs" data-toggle="tooltip"  title="Review">
                             <i class="fa fa-comment" aria-hidden="true"></i>
                         </a>
                         Review

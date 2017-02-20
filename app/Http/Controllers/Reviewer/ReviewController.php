@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers\Reviewer;
 
+use App\Model\Conference;
 use App\Model\Paper;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class ReviewController extends Controller
 {
@@ -16,11 +19,19 @@ class ReviewController extends Controller
         $this->prefix = $request->segment(1);
     }
 
-    public function index($url=null, $paper_id) {
-        $paper = Paper::find($paper_id);
-//        foreach ($paper->reviewers as $rew) {
-//            print_r($rew->pivot->comment_str);
-//        }
+    protected function validator(array $data) {
+        return Validator::make($data, [
+            'score'    => 'required|array|size:11',
+            'score.*'    => 'required|in:1,2,3,4,5',
+            'bpp_recommend' => 'required|boolean',
+            'comment_str' => 'max:1500',
+            'comment_weak' => 'max:1500',
+            'comment_reviewer' => 'max:1500'
+        ]);
+    }
+
+    public function index() {
+
     }
 
     /**
@@ -28,9 +39,13 @@ class ReviewController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($url=null, $paper_id)
     {
-        //
+        $paper = Paper::find($paper_id);
+        $this->authorize('review', $paper);
+
+        $conf = Conference::where('url', $this->prefix)->first();
+        return view('reviewer.review.create', ["prefix" => $this->prefix, "menu" => "list", "title" => "Review Paper " . $paper->id . ": ".$paper->title, "conf" => $conf, "paper" => $paper]);
     }
 
     /**
@@ -39,9 +54,23 @@ class ReviewController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,$url,$paper_id)
     {
-        //
+        $paper = Paper::find($paper_id);
+        $this->authorize('review', $paper);
+        $data = $request->except('_token');
+        $conf = Conference::where('url', $this->prefix)->first();
+        $user = Auth::user();
+
+        $validator = $this->validator($data);
+        if ($validator->fails()) {
+            return redirect()->back()->with(["prefix" => $this->prefix, "menu" => "list", "title" => "Review Paper " . $paper->id . ": ".$paper->title, "conf" => $conf, "paper" => $paper])->withInput($data)->withErrors($validator);
+        }
+
+        $data['score'] = json_encode($data['score'], JSON_UNESCAPED_UNICODE);
+
+        $paper->reviewers()->updateExistingPivot($user->id, $data);
+        return redirect($this->prefix.'/list')->with(['success' => 'Review Success!']);
     }
 
     /**
