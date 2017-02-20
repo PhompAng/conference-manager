@@ -35,7 +35,7 @@
                         {{$paper->status}}
                         <br>
                         @if($paper->status != "withdraw")
-                            <a href="#" class="btn btn-primary btn-sm">View comments</a>
+                            <a href="{{URL::route('review.index', ['url' => $prefix, 'paper_id' => $paper->id])}}" class="btn btn-primary btn-sm">View comments</a>
                         @endif
                     </td>
                     <td style="vertical-align: middle;">

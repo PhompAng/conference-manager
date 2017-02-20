@@ -142,19 +142,19 @@
                     <div class="row">
                         <div class="col-md-12">
                             <label class="radio-inline">
-                                <input type="radio" name="score[2.3]" value="5" {{old('score.2->3') == 5 ? "checked":""}} > 5
+                                <input type="radio" name="score[2.3]" value="5" {{old('score.2->3') == 5 ? "checked":""}} required> 5
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="score[2.3]" value="4" {{old('score.2->3') == 4 ? "checked":""}} > 4
+                                <input type="radio" name="score[2.3]" value="4" {{old('score.2->3') == 4 ? "checked":""}} required> 4
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="score[2.3]" value="3" {{old('score.2->3') == 3 ? "checked":""}} > 3
+                                <input type="radio" name="score[2.3]" value="3" {{old('score.2->3') == 3 ? "checked":""}} required> 3
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="score[2.3]" value="2" {{old('score.2->3') == 2 ? "checked":""}} > 2
+                                <input type="radio" name="score[2.3]" value="2" {{old('score.2->3') == 2 ? "checked":""}} required> 2
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="score[2.3]" value="1" {{old('score.2->3') == 1 ? "checked":""}} > 1
+                                <input type="radio" name="score[2.3]" value="1" {{old('score.2->3') == 1 ? "checked":""}} required> 1
                             </label>
                             @if($errors->has('score.2->3'))
                                 <span class="help-block">

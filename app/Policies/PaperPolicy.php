@@ -71,6 +71,10 @@ class PaperPolicy
         return $user->id == $paper->user->id;
     }
 
+    public function view_review(User $user, Paper $paper) {
+        return $user->id == $paper->user->id;
+    }
+
     public function review(User $user, Paper $paper) {
         return $paper->reviewers->contains('id', $user->id) && $paper->status != 'withdraw';
     }

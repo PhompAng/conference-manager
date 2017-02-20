@@ -30,8 +30,16 @@ class ReviewController extends Controller
         ]);
     }
 
-    public function index() {
+    public function index($url, $paper_id) {
+        $paper = Paper::find($paper_id);
+        $this->authorize('view_review', $paper);
+        $conf = Conference::where('url', $this->prefix)->first();
+        $reviewers = $paper->reviewers;
+        for ($i=0;$i<count($reviewers);$i++) {
+            $reviewers[$i]->pivot['score'] = json_decode($reviewers[$i]->pivot->score, true);
+        }
 
+        return view('reviewer.review.index', ["prefix" => $this->prefix, "menu" => "list", "title" => "Paper Comments " . $paper->id . ": ".$paper->title, "conf" => $conf, "reviews" => $reviewers]);
     }
 
     /**
@@ -79,9 +87,9 @@ class ReviewController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($url, $paper_id, $id)
     {
-        //
+
     }
 
     /**

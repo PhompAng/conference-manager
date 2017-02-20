@@ -62,6 +62,10 @@ Route::group(['prefix' => '{url}'], function () {
         Route::delete('/{id}/tpc', 'Reviewer\UsersController@removeTPC');
     });
 
+    Route::get('/{paper_id}/review', [
+        'as' => 'review.index',
+        'uses' => 'Reviewer\ReviewController@index'
+    ]);
     Route::get('/list', 'PaperListController@index');
     Route::get('/{user_id}/{file}', [
         'as' => 'getPaper',
