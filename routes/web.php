@@ -41,6 +41,11 @@ Route::group(['prefix' => '{url}'], function () {
         Route::get('/edit', 'Author\EditController@index');
         Route::post('/edit', 'Author\EditController@update');
         Route::resource('/paper', 'Author\PaperController');
+        Route::resource('/{paper_id}/camera_ready', 'Author\CameraReadyController', ['only' => ['create', 'store']]);
+        Route::get('/camera_ready', [
+            'as' => 'camera_ready.index',
+            'uses' => 'Author\CameraReadyController@index'
+        ]);
     });
 
     Route::group(['middleware' => 'can:reviewer'], function() {
