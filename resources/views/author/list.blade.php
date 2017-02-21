@@ -42,13 +42,13 @@
                         @if(!isset($conf->paper_deadline) || \Carbon\Carbon::now()->gt(\Carbon\Carbon::parse($conf->paper_deadline)))
                             <span>Time Up!!</span>
                         @else
+                            @if($paper->status != "withdraw")
                             <span>
                                 <a href="{{URL::route('paper.edit', ["url"=>$prefix, "id" => $paper->id])}}" class="btn btn-default btn-xs" data-toggle="tooltip"  title="Edit">
                                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                 </a>
                                 Edit
                             </span>
-                            @if($paper->status != "withdraw")
                             <form action="{{URL::route('paper.destroy', ["url"=>$prefix, "id" => $paper->id])}}" method="post" onsubmit="return confirm('Do you want to withdraw this paper ?')">
                                 {!! csrf_field() !!}
                                 {!! method_field('DELETE') !!}
