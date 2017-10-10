@@ -2,6 +2,8 @@
 @section('body')
     @if(!isset($conf->paper_deadline) || \Carbon\Carbon::now()->gt(\Carbon\Carbon::parse($conf->paper_deadline)))
         <h1 class="text-center">Time Up!!</h1>
+    @elseif($conf->areas == null || $conf->areas == '')
+        <h1 class="text-center">Areas is Empty</h1>
     @else
         <form id="form" action="{{ URL::to($prefix.'/paper') }}" method="POST" enctype="multipart/form-data" role="form" class="form-horizontal">
 
