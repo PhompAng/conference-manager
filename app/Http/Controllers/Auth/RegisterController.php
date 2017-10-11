@@ -81,10 +81,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-
         $conf = Conference::where('url', $this->prefix)->first();
-//        print_r(Conference::find(1));
-//        dd($conf);
         return $conf->users()->create([
             'title' => $data['title'],
             'academic_position' => $data['academic_position'],
@@ -99,6 +96,23 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password']),
             'role' => $data['role'],
         ]);
+    }
+
+    public function register(Request $request)
+    {
+        $data = $request->all();
+        $conf = Conference::where('url', $this->prefix)->first();
+        if ($conf->users()->where('email', $data['email'])->count() > 0) {
+            return redirect()->back()->withInput($data)->withErrors(['email' => 'duplicate email']);
+        }
+        $this->validator($request->all())->validate();
+
+        event(new Registered($user = $this->create($request->all())));
+
+        $this->guard()->login($user);
+
+        return $this->registered($request, $user)
+            ?: redirect($this->redirectPath());
     }
 
     /**
