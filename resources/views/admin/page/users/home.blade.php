@@ -33,7 +33,7 @@
                             Edit
                         </span>
                         <br>
-                        @if($user->role == 2)
+                        @if($user->role != 3)
                         <form action="{{URL::route('makeTPC', ["conf" => $conf->id, "user" => $user->id])}}" method="post">
                         {!! csrf_field() !!}
                         <span>
@@ -45,16 +45,28 @@
                         </form>
                         @endif
                         @if($user->role == 3)
-                            <form action="{{URL::route('removeTPC', ["conf" => $conf->id, "user" => $user->id])}}" method="post">
-                            {!! csrf_field() !!}
-                            {!! method_field('DELETE') !!}
-                            <span>
-                                <button type="submit" class="btn btn-primary btn-xs" data-toggle="tooltip" title="Remove TPC">
-                                    <i class="fa fa-user-circle" aria-hidden="true"></i>
-                                </button>
-                                Remove TPC
-                            </span>
-                            </form>
+                        <form action="{{URL::route('removeTPC', ["conf" => $conf->id, "user" => $user->id])}}" method="post">
+                        {!! csrf_field() !!}
+                        {!! method_field('DELETE') !!}
+                        <input type="hidden" name="role" value="1">
+                        <span>
+                            <button type="submit" class="btn btn-primary btn-xs" data-toggle="tooltip" title="Remove TPC">
+                                <i class="fa fa-user-circle" aria-hidden="true"></i>
+                            </button>
+                            Make Author
+                        </span>
+                        </form>
+                        <form action="{{URL::route('removeTPC', ["conf" => $conf->id, "user" => $user->id, "role" => 2])}}" method="post">
+                        {!! csrf_field() !!}
+                        {!! method_field('DELETE') !!}
+                        <input type="hidden" name="role" value="2">
+                        <span>
+                            <button type="submit" class="btn btn-primary btn-xs" data-toggle="tooltip" title="Remove TPC">
+                                <i class="fa fa-user-circle" aria-hidden="true"></i>
+                            </button>
+                            Make Reviewer
+                        </span>
+                        </form>
                         @endif
                         <form action="{{URL::route('user.destroy', ["conf" => $conf->id, "user"=>$user->id])}}" method="post" onsubmit="return confirm('Do you want to remove this user ?')">
                             {!! csrf_field() !!}

@@ -94,11 +94,16 @@ class UsersController extends Controller
         return redirect('/admin/'.$conf.'/user')->with(['success' => "Make TPC Success!"]);
     }
 
-    public function removeTPC($conf, $id) {
+    public function removeTPC($conf, $id, Request $request) {
         $user = User::find($id);
-        $user->role = 2;
+        $user->role = $request->input('role');
         $user->save();
+        if ($request->input('role') == 1) {
+            $role = "Author";
+        } elseif ($request->input('role') == 2) {
+            $role = "Reviewer";
+        }
 
-        return redirect('/admin/'.$conf.'/user')->with(['success' => "Remove TPC Success!"]);
+        return redirect('/admin/'.$conf.'/user')->with(['success' => "Make ". $role ." Success!"]);
     }
 }
