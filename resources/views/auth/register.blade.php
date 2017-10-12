@@ -416,21 +416,8 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('email') || $errors->has('username') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <div class="row">
-                                <div class="col-md-6">
-                                    <label for="username" class="col-md-4 control-label">Username <sup><i class="fa fa-asterisk text-danger" aria-hidden="true"></i></sup></label>
-
-                                    <div class="col-md-8">
-                                        <input id="username" type="username" class="form-control" name="username" value="{{ old('username') }}" required>
-
-                                        @if ($errors->has('username'))
-                                            <span class="help-block">
-                                        <strong>{{ $errors->first('username') }}</strong>
-                                    </span>
-                                        @endif
-                                    </div>
-                                </div>
                                 <div class="col-md-6">
                                     <label for="email" class="col-md-4 control-label">E-Mail Address <sup><i class="fa fa-asterisk text-danger" aria-hidden="true"></i></sup></label>
 

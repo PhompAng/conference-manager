@@ -46,11 +46,6 @@ class LoginController extends Controller
         $this->redirectAfterLogout = $this->prefix;
     }
 
-    public function username()
-    {
-        return 'username';
-    }
-
     /**
      * Handle a login request to the application.
      *
