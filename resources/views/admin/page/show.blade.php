@@ -124,6 +124,11 @@
                 <a href="{{URL::route('edit', ["id" => $conf->id])}}" class="btn btn-primary">
                     Edit
                 </a>
+                @if(!isset($conf->acceptance) || \Carbon\Carbon::now()->gt(\Carbon\Carbon::parse($conf->acceptance)))
+                    <a href="{{URL::route('edit', ["id" => $conf->id])}}" class="btn btn-primary">
+                        Publish acceptance
+                    </a>
+                @endif
             </div>
         </div>
     </form>

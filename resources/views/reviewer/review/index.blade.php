@@ -14,7 +14,6 @@
             @endforeach
         </ul>
 
-
         @if(count($reviews) < 1)
             <div class="well">
                 <h4>This paper doesn't have review.</h4>

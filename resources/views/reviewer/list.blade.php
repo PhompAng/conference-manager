@@ -37,12 +37,16 @@
                 </td>
                 <td class="text-center">
                     {{$paper->status}}
+                    @if($paper->status != 'withdraw')
+                    <br>
+                    Avg: {{$paper['avg']}} BestPP: {{$paper['bpp']}}
                     <br>
                     <span>
                         <a href="{{URL::route('review.index', ["url"=>$prefix, "paper_id" => $paper->id])}}" class="btn btn-primary btn-xs" data-toggle="tooltip"  title="Review">
                             Details
                         </a>
                     </span>
+                    @endif
                 </td>
                 <td class="text-center">
                     {{App\User::getAcademicPosition($paper->user->academic_position)}} {{App\User::getTitle($paper->user->title)}} {{$paper->user->name}} {{$paper->user->family_name}}
