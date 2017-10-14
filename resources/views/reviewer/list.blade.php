@@ -37,6 +37,12 @@
                 </td>
                 <td class="text-center">
                     {{$paper->status}}
+                    <br>
+                    <span>
+                        <a href="{{URL::route('review.index', ["url"=>$prefix, "paper_id" => $paper->id])}}" class="btn btn-primary btn-xs" data-toggle="tooltip"  title="Review">
+                            Details
+                        </a>
+                    </span>
                 </td>
                 <td class="text-center">
                     {{App\User::getAcademicPosition($paper->user->academic_position)}} {{App\User::getTitle($paper->user->title)}} {{$paper->user->name}} {{$paper->user->family_name}}
@@ -50,6 +56,7 @@
                         <a href="{{URL::route('review.create', ["url"=>$prefix, "paper_id" => $paper->id])}}" class="btn btn-default btn-xs" data-toggle="tooltip"  title="Review">
                             <i class="fa fa-comment" aria-hidden="true"></i>
                         </a>
+                        {{-- TODO update review--}}
                         Review
                     </span>
                     @endcan
@@ -106,21 +113,21 @@
                                                         {!! csrf_field() !!}
                                                         {!! method_field('DELETE') !!}
                                                         <span>
-                                <button type="submit" class="btn btn-primary btn-xs" data-toggle="tooltip"  title="Unassign">
-                                    <i class="fa fa-user-times" aria-hidden="true"></i>
-                                </button>
-                            Unassign
-                            </span>
+                                                            <button type="submit" class="btn btn-primary btn-xs" data-toggle="tooltip"  title="Unassign">
+                                                                <i class="fa fa-user-times" aria-hidden="true"></i>
+                                                            </button>
+                                                        Unassign
+                                                        </span>
                                                     </form>
                                                     @else
                                                     <form action="{{URL::route('review.assign', ["url"=>$prefix, "paper_id" => $paper->id, "user_id" => $reviewer->id])}}" method="post">
                                                         {!! csrf_field() !!}
                                                         <span>
-                                <button type="submit" class="btn btn-primary btn-xs" data-toggle="tooltip"  title="Assign">
-                                    <i class="fa fa-user-plus" aria-hidden="true"></i>
-                                </button>
-                            Assign
-                            </span>
+                                                            <button type="submit" class="btn btn-primary btn-xs" data-toggle="tooltip"  title="Assign">
+                                                                <i class="fa fa-user-plus" aria-hidden="true"></i>
+                                                            </button>
+                                                        Assign
+                                                        </span>
                                                     </form>
                                                     @endif
                                                 </td>

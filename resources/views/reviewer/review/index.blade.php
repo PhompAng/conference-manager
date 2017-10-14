@@ -8,10 +8,18 @@
     <div id="content">
         <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
             @foreach($reviews as $key=>$review)
-                <li role="presentation" class="{{$key==0 ? "active":""}}"><a href="#{{$key++}}" aria-controls="home" role="tab" data-toggle="tab">{{$key++}}</a></li>
+                <li role="presentation" class="{{$key==0 ? "active":""}}">
+                    <a href="#{{$key++}}" aria-controls="home" role="tab" data-toggle="tab">{{$key++}}</a>
+                </li>
             @endforeach
         </ul>
 
+
+        @if(count($reviews) < 1)
+            <div class="well">
+                <h4>This paper doesn't have review.</h4>
+            </div>
+        @endif
         <div id="tab-contents" class="tab-content">
             @foreach($reviews as $key=>$review)
                 <div class="tab-pane {{$key==0 ? "active":""}}" id="{{$key++}}">

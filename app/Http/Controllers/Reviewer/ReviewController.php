@@ -39,7 +39,12 @@ class ReviewController extends Controller
             $reviewers[$i]->pivot['score'] = json_decode($reviewers[$i]->pivot->score, true);
         }
 
-        return view('reviewer.review.index', ["prefix" => $this->prefix, "menu" => "list", "title" => "Paper Comments " . $paper->id . ": ".$paper->title, "conf" => $conf, "reviews" => $reviewers]);
+        return view('reviewer.review.index', [
+            "prefix" => $this->prefix,
+            "menu" => "list",
+            "title" => "Review of Paper " . $paper->id . ": ".$paper->title,
+            "conf" => $conf,
+            "reviews" => $reviewers]);
     }
 
     /**
@@ -53,7 +58,12 @@ class ReviewController extends Controller
         $this->authorize('review', $paper);
 
         $conf = Conference::where('url', $this->prefix)->first();
-        return view('reviewer.review.create', ["prefix" => $this->prefix, "menu" => "list", "title" => "Review Paper " . $paper->id . ": ".$paper->title, "conf" => $conf, "paper" => $paper]);
+        return view('reviewer.review.create', [
+            "prefix" => $this->prefix,
+            "menu" => "list",
+            "title" => "Review Paper " . $paper->id . ": ".$paper->title,
+            "conf" => $conf,
+            "paper" => $paper]);
     }
 
     /**
@@ -72,7 +82,16 @@ class ReviewController extends Controller
 
         $validator = $this->validator($data);
         if ($validator->fails()) {
-            return redirect()->back()->with(["prefix" => $this->prefix, "menu" => "list", "title" => "Review Paper " . $paper->id . ": ".$paper->title, "conf" => $conf, "paper" => $paper])->withInput($data)->withErrors($validator);
+            return redirect()
+                ->back()
+                ->with([
+                    "prefix" => $this->prefix,
+                    "menu" => "list",
+                    "title" => "Review Paper " . $paper->id . ": ".$paper->title,
+                    "conf" => $conf,
+                    "paper" => $paper])
+                ->withInput($data)
+                ->withErrors($validator);
         }
 
         $data['score'] = json_encode($data['score'], JSON_UNESCAPED_UNICODE);
@@ -89,7 +108,6 @@ class ReviewController extends Controller
      */
     public function show($url, $paper_id, $id)
     {
-
     }
 
     /**
