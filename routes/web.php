@@ -25,12 +25,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     ]]);
     Route::resource('/{conf}/user', 'UsersController');
     Route::post('/{conf}/{id}/tpc', [
-        'as' => 'makeTPC',
-        'uses' => 'UsersController@makeTPC'
-    ]);
-    Route::delete('/{conf}/{id}/tpc', [
-        'as' => 'removeTPC',
-        'uses' => 'UsersController@removeTPC'
+        'as' => 'setRole',
+        'uses' => 'UsersController@setRole'
     ]);
 });
 
