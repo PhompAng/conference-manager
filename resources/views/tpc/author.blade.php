@@ -18,9 +18,7 @@
         @foreach($authors as $author)
             <tr>
                 <td>{{$author->id}}</td>
-                <td>
-                    {{App\User::getAcademicPosition($author->academic_position)}} {{App\User::getTitle($author->title)}} {{$author->name}} {{$author->family_name}}
-                </td>
+                <td>{{App\User::getFullName($author)}}</td>
                 <td class="text-center">
                     {{$author->affiliation}}
                 </td>

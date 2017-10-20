@@ -49,7 +49,7 @@
                     @endif
                 </td>
                 <td class="text-center">
-                    {{App\User::getAcademicPosition($paper->user->academic_position)}} {{App\User::getTitle($paper->user->title)}} {{$paper->user->name}} {{$paper->user->family_name}}
+                    {{App\User::getFullName($paper->user)}}
                     <br>
                     {{$paper->user->email}}
                 </td>
@@ -97,7 +97,7 @@
                                             <tr>
                                                 <td>{{$reviewer->id}}</td>
                                                 <td>
-                                                    {{App\User::getAcademicPosition($reviewer->academic_position)}} {{App\User::getTitle($reviewer->title)}} {{$reviewer->name}} {{$reviewer->family_name}}
+                                                    {{App\User::getFullName($reviewer)}}
                                                 </td>
                                                 <td class="text-center">
                                                     {{$reviewer->affiliation}}

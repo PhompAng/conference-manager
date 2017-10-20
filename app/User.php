@@ -66,6 +66,10 @@ class User extends Authenticatable
         }
     }
 
+    public static function getFullName($value) {
+        return static::getAcademicPosition($value->academic_position) . ' ' . static::getTitle($value->title) . ' ' . $value->name . ' ' . $value->family_name;
+    }
+
     public function conference() {
         return $this->belongsTo('App\Model\Conference');
     }

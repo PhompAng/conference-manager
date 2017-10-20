@@ -20,9 +20,7 @@
         @foreach($reviewers as $reviewer)
             <tr>
                 <td>{{$reviewer->id}}</td>
-                <td>
-                    {{App\User::getAcademicPosition($reviewer->academic_position)}} {{App\User::getTitle($reviewer->title)}} {{$reviewer->name}} {{$reviewer->family_name}}
-                </td>
+                <td>{{App\User::getFullName($reviewer)}}</td>
                 <td class="text-center">
                     {{$reviewer->affiliation}}
                 </td>
