@@ -71,6 +71,7 @@ Route::group(['prefix' => '{url}'], function () {
         'as' => 'review.index',
         'uses' => 'Reviewer\ReviewController@index'
     ]);
+    Route::get('/my_submission', 'PaperListController@mySubmission');
     Route::get('/list', 'PaperListController@index');
     Route::get('/{user_id}/{file}', [
         'as' => 'getPaper',

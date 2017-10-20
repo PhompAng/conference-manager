@@ -92,14 +92,24 @@ class PaperController extends Controller
     public function index($url=null) {
         $conf = Conference::where('url', $this->prefix)->first();
         $user = Auth::user();
-        return view('author.paper', ["prefix" => $this->prefix, "menu" => "paper", "title" => "Paper Submission", "conf" => $conf, "user" => $user]);
+        return view('author.paper', [
+            "prefix" => $this->prefix,
+            "menu" => "paper",
+            "title" => "Paper Submission",
+            "conf" => $conf, "user" => $user]);
     }
 
     public function edit($url=null, $id) {
         $conf = Conference::where('url', $this->prefix)->first();
         $user = Auth::user();
         $paper = Paper::find($id);
-        return view('author.paper_edit', ["prefix" => $this->prefix, "menu" => "paper", "title" => "Paper Submission", "conf" => $conf, "user" => $user, "paper" => $paper]);
+        return view('author.paper_edit', [
+            "prefix" => $this->prefix,
+            "menu" => "paper",
+            "title" => "Paper Submission",
+            "conf" => $conf,
+            "user" => $user,
+            "paper" => $paper]);
     }
 
     public function update(Request $request, $url=null, $id) {
@@ -110,7 +120,13 @@ class PaperController extends Controller
 
         $validator = $this->editValidator($data);
         if ($validator->fails()) {
-            return redirect()->back()->with(["prefix" => $this->prefix, "menu" => "paper", "title" => "Paper Submission", "conf" => $conf, "user" => $user, "paper" => $paper])->withInput($data)->withErrors($validator);
+            return redirect()->back()->with([
+                "prefix" => $this->prefix,
+                "menu" => "paper",
+                "title" => "Paper Submission",
+                "conf" => $conf,
+                "user" => $user,
+                "paper" => $paper])->withInput($data)->withErrors($validator);
         }
 
         $paper->update($data);
