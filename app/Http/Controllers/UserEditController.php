@@ -1,14 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Author;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Model\Conference;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
-class EditController extends Controller
+class UserEditController extends Controller
 {
     protected $prefix = "/";
 
@@ -30,7 +29,6 @@ class EditController extends Controller
             'affiliation' => 'required|max:255',
             'country' => 'required|max:255',
             'mobile' => 'required|max:255',
-            'email' => 'required|email|max:255',
             'fax' => 'max:255',
         ]);
     }
@@ -40,17 +38,17 @@ class EditController extends Controller
         $conf = Conference::where('url', $this->prefix)->first();
         $validator = $this->validator($data);
         if ($validator->fails()) {
-            return view('author.edit')->with(["prefix" => $this->prefix, "menu" => "personal", "title" => "Personal Information", "conf" => $conf, "user" => $request])->withErrors($validator);
+            return view('edit')->with(["prefix" => $this->prefix, "menu" => "personal", "title" => "Personal Information", "conf" => $conf, "user" => $request])->withErrors($validator);
         }
 
         Auth::user()->update($data);
-        return view('author.edit', ["prefix" => $this->prefix, "menu" => "personal", "title" => "Personal Information", "conf" => $conf, "user" => Auth::user()]);
+        return view('edit', ["prefix" => $this->prefix, "menu" => "personal", "title" => "Personal Information", "conf" => $conf, "user" => Auth::user()]);
     }
 
     public function index($url=null) {
         $conf = Conference::where('url', $this->prefix)->first();
         $user = Auth::user();
-        return view('author.edit', ["prefix" => $this->prefix, "menu" => "personal", "title" => "Personal Information", "conf" => $conf, "user" => $user]);
+        return view('edit', ["prefix" => $this->prefix, "menu" => "personal", "title" => "Personal Information", "conf" => $conf, "user" => $user]);
     }
 
 

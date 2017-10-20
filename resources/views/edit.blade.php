@@ -408,23 +408,23 @@
             </div>
         </div>
 
-        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-            <div class="row">
-                <div class="col-md-6">
-                    <label for="email" class="col-md-4 control-label">E-Mail Address <sup><i class="fa fa-asterisk text-danger" aria-hidden="true"></i></sup></label>
+        {{--<div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">--}}
+            {{--<div class="row">--}}
+                {{--<div class="col-md-6">--}}
+                    {{--<label for="email" class="col-md-4 control-label">E-Mail Address <sup><i class="fa fa-asterisk text-danger" aria-hidden="true"></i></sup></label>--}}
 
-                    <div class="col-md-8">
-                        <input id="email" type="email" class="form-control" name="email" value="{{ $user->email }}" required>
+                    {{--<div class="col-md-8">--}}
+                        {{--<input id="email" type="email" class="form-control" name="email" value="{{ $user->email }}" required>--}}
 
-                        @if ($errors->has('email'))
-                            <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                        @endif
-                    </div>
-                </div>
-            </div>
-        </div>
+                        {{--@if ($errors->has('email'))--}}
+                            {{--<span class="help-block">--}}
+                                        {{--<strong>{{ $errors->first('email') }}</strong>--}}
+                                    {{--</span>--}}
+                        {{--@endif--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
 
         <div class="form-group">
             <div class="col-md-2 col-md-offset-5">

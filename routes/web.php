@@ -37,9 +37,9 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
 Route::group(['prefix' => '{url}'], function () {
     Auth::routes();
     Route::get('/', 'HomeController@index');
+    Route::get('/edit', 'UserEditController@index');
+    Route::post('/edit', 'UserEditController@update');
     Route::group(['middleware' => 'can:author'], function () {
-        Route::get('/edit', 'Author\EditController@index');
-        Route::post('/edit', 'Author\EditController@update');
         Route::resource('/paper', 'Author\PaperController');
         Route::resource('/{paper_id}/camera_ready', 'Author\CameraReadyController', ['only' => ['create', 'store']]);
         Route::get('/camera_ready', [
