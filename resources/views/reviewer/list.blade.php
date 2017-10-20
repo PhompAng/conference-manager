@@ -7,7 +7,7 @@
     <table class="table table-hover table-bordered">
         <thead>
         <tr>
-            <th>Code</th>
+            <th>PID</th>
             <th>Area</th>
             <th>Title</th>
             <th>Paper</th>
