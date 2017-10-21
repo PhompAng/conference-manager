@@ -24,6 +24,10 @@ class Paper extends Model
         $this->attributes['authors'] = json_encode($value, JSON_UNESCAPED_UNICODE);
     }
 
+    public static function getAreaIndex($value) {
+
+    }
+
     public function user() {
         return $this->belongsTo('App\User');
     }
