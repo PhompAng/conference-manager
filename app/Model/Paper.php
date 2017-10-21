@@ -25,7 +25,7 @@ class Paper extends Model
     }
 
     public static function getAreaIndex($value) {
-
+        return array_search($value->area, $value->conference->areas);
     }
 
     public function user() {

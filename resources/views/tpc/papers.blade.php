@@ -21,7 +21,9 @@
         @foreach($papers as $paper)
             <tr>
                 <td>{{$paper->id}}</td>
-                <td>{{$paper->area}}</td>
+                <td>
+                    {{App\Model\Paper::getAreaIndex($paper)}}
+                </td>
                 <td>
                     {{$paper->title}}<br>
                     Keywords:
