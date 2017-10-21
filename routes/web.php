@@ -57,6 +57,7 @@ Route::group(['prefix' => '{url}'], function () {
     });
 
     Route::group(['middleware' => 'can:tpc'], function () {
+        Route::get('/papers', 'TPC\PapersController@index');
         Route::get('/author', 'TPC\AuthorController@index');
         Route::get('/reviewer', 'TPC\ReviewerController@index');
         Route::post('/{id}/tpc', 'Reviewer\UsersController@makeTPC');

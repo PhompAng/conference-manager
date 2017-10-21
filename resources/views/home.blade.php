@@ -64,6 +64,12 @@
                             {{--<li role="presentation" class="{{ $menu == "report" ? "active":"" }}"><a href="{{URL($prefix."/list")}}">Report</a></li>--}}
                             <li role="presentation"
                                 class="{{ $menu == "author" ? "active":"" }}">
+                                <a href="{{URL($prefix."/papers")}}">
+                                    Papers
+                                </a>
+                            </li>
+                            <li role="presentation"
+                                class="{{ $menu == "author" ? "active":"" }}">
                                 <a href="{{URL($prefix."/author")}}">
                                     Authors
                                 </a>
