@@ -14,6 +14,7 @@
             <th>Status</th>
             <th>Submitter</th>
             <th>Country</th>
+            <th>Decision</th>
             <th>Action</th>
         </tr>
         </thead>
@@ -56,6 +57,11 @@
                     {{$paper->user->email}}
                 </td>
                 <td>{{$paper->user->country}}</td>
+                <td>
+                    @if(Auth::user()->can('tpc'))
+
+                    @endif
+                </td>
                 <td>
                     @can('review', $paper)
                         <span>
