@@ -58,9 +58,42 @@
                 </td>
                 <td>{{$paper->user->country}}</td>
                 <td>
-                    @if(Auth::user()->can('tpc'))
-
+                    @if($paper->decision != null)
+                        {{$paper->decision}}
                     @endif
+                    @if(Auth::user()->can('tpc'))
+                        <span>
+                        <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#decisionModal{{$paper->id}}">
+                            Decision
+                        </button>
+                        </span>
+                    @endif
+
+                    <div id="decisionModal{{$paper->id}}" class="modal fade" tabindex="-1" role="dialog">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title">Make Decision (Paper ID: {{$paper->id}})</h4>
+                                    </div>
+                                    <div class="modal-body text-center">
+                                        <form action="{{URL::route('paper.accepted', ["url"=>$prefix, "paper_id" => $paper->id])}}" method="post">
+                                            {!! csrf_field() !!}
+                                            <button type="submit" class="btn btn-primary">Accepted</button>
+                                        </form>
+                                        <br>
+                                        <form action="{{URL::route('paper.rejected', ["url"=>$prefix, "paper_id" => $paper->id])}}" method="post">
+                                            {!! csrf_field() !!}
+                                            {!! method_field('DELETE') !!}
+                                            <button type="submit" class="btn btn-danger">Rejected</button>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div><!-- /.modal-content -->
+                            </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
                 </td>
                 <td>
                     @can('review', $paper)
@@ -79,13 +112,13 @@
                             <i class="fa fa-user-plus" aria-hidden="true"></i>
                         </button>
                         Assign
-                    </span>
+                        </span>
                         <div id="myModal{{$paper->id}}" class="modal fade" tabindex="-1" role="dialog">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title">Choose Reviewer</h4>
+                                        <h4 class="modal-title">Choose Reviewer (Paper ID: {{$paper->id}})</h4>
                                     </div>
                                     <div class="modal-body">
                                         <table class="table table-hover table-bordered">
@@ -125,21 +158,21 @@
                                                                 {!! csrf_field() !!}
                                                                 {!! method_field('DELETE') !!}
                                                                 <span>
-                                                            <button type="submit" class="btn btn-primary btn-xs" data-toggle="tooltip"  title="Unassign">
-                                                                <i class="fa fa-user-times" aria-hidden="true"></i>
-                                                            </button>
-                                                        Unassign
-                                                        </span>
+                                                                    <button type="submit" class="btn btn-primary btn-xs" data-toggle="tooltip" title="Unassign">
+                                                                        <i class="fa fa-user-times" aria-hidden="true"></i>
+                                                                    </button>
+                                                                    Unassign
+                                                                </span>
                                                             </form>
                                                         @else
                                                             <form action="{{URL::route('review.assign', ["url"=>$prefix, "paper_id" => $paper->id, "user_id" => $reviewer->id])}}" method="post">
                                                                 {!! csrf_field() !!}
                                                                 <span>
-                                                            <button type="submit" class="btn btn-primary btn-xs" data-toggle="tooltip"  title="Assign">
-                                                                <i class="fa fa-user-plus" aria-hidden="true"></i>
-                                                            </button>
-                                                        Assign
-                                                        </span>
+                                                                    <button type="submit" class="btn btn-primary btn-xs" data-toggle="tooltip" title="Assign">
+                                                                        <i class="fa fa-user-plus" aria-hidden="true"></i>
+                                                                    </button>
+                                                                    Assign
+                                                                </span>
                                                             </form>
                                                         @endif
                                                     </td>

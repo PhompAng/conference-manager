@@ -36,6 +36,23 @@ class PapersController extends Controller
             "reviewers" => $reviewers]);
     }
 
+    public function accepted($url = null, $paper_id) {
+        $paper = Paper::find($paper_id);
+        $this->authorize('decision', $paper);
+
+        $paper->decision = 'Accepted';
+        $paper->save();
+        return redirect()->back()->with(['success' => 'Accept paper success!']);
+    }
+
+    public function rejected($url = null, $paper_id) {
+        $paper = Paper::find($paper_id);
+        $this->authorize('decision', $paper);
+
+        $paper->decision = 'Rejected';
+        $paper->save();
+        return redirect()->back()->with(['success' => 'Reject paper success!']);
+    }
 
     private function getAvgAndBpp($papers) {
         for ($i=0;$i<count($papers);$i++) {

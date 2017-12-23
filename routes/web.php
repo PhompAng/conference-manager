@@ -62,6 +62,14 @@ Route::group(['prefix' => '{url}'], function () {
         Route::get('/reviewer', 'TPC\ReviewerController@index');
         Route::post('/{id}/tpc', 'Reviewer\UsersController@makeTPC');
         Route::delete('/{id}/tpc', 'Reviewer\UsersController@removeTPC');
+        Route::post('/papers/{paper_id}/decision', [
+            'as' => 'paper.accepted',
+            'uses' => 'TPC\PapersController@accepted'
+        ]);
+        Route::delete('/papers/{paper_id}/decision', [
+            'as' => 'paper.rejected',
+            'uses' => 'TPC\PapersController@rejected'
+        ]);
     });
 
     Route::group(['middleware' => 'can:reviewer,tpc'], function () {

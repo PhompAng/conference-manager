@@ -17,6 +17,8 @@ class PaperPolicy
                 break;
             case 'assign':
                 break;
+            case 'decision':
+                break;
             default:
                 if ($user->role >= 2) {
                     return true;
@@ -80,6 +82,10 @@ class PaperPolicy
     }
 
     public function assign(User $user, Paper $paper) {
+        return $user->role == 3 && $paper->status != 'withdraw';
+    }
+
+    public function decision(User $user, Paper $paper) {
         return $user->role == 3 && $paper->status != 'withdraw';
     }
 }
