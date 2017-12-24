@@ -70,6 +70,10 @@ Route::group(['prefix' => '{url}'], function () {
             'as' => 'paper.rejected',
             'uses' => 'TPC\PapersController@rejected'
         ]);
+        Route::post('/papers/{paper_id}/notify', [
+            'as' => 'paper.notify',
+            'uses' => 'TPC\PapersController@notify'
+        ]);
     });
 
     Route::group(['middleware' => 'can:reviewer,tpc'], function () {

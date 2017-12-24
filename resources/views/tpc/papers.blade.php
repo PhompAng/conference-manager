@@ -15,6 +15,7 @@
             <th>Submitter</th>
             <th>Country</th>
             <th>Decision</th>
+            <th>Notify</th>
             <th>Action</th>
         </tr>
         </thead>
@@ -94,6 +95,15 @@
                                 </div><!-- /.modal-content -->
                             </div><!-- /.modal-dialog -->
                     </div><!-- /.modal -->
+                </td>
+                <td>
+                    @if($paper->notify != null)
+                        {{$paper->notify}}
+                    @endif
+                    <form action="{{URL::route('paper.notify', ["url"=>$prefix, "paper_id" => $paper->id])}}" method="post">
+                        {!! csrf_field() !!}
+                        <button type="submit" class="btn btn-primary btn-xs">Notify</button>
+                    </form>
                 </td>
                 <td>
                     @can('review', $paper)

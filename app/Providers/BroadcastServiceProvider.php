@@ -14,7 +14,9 @@ class BroadcastServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Broadcast::routes();
+        Broadcast::routes(['prefix' => 'broadcast', 'middleware' => ['web','auth','can:tpc']]);
+
+        require base_path('routes/channels.php');
 
         /*
          * Authenticate the user's personal channel...

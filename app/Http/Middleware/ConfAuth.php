@@ -20,6 +20,9 @@ class ConfAuth extends Authenticate
      */
     public function handle($request, Closure $next, ...$guards)
     {
+        if ($request->segment(1) === 'broadcast') {
+            return $next($request);
+        }
         $conf = Conference::where('url', $request->segment(1))->first();
         $user = \Illuminate\Support\Facades\Auth::user();
         if (empty($guards) && !is_null($user) && $user->conference_id != $conf->id) {

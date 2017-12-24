@@ -37,9 +37,18 @@ Vue.http.interceptors.push((request, next) => {
  * allows your team to easily build robust real-time web applications.
  */
 
-// import Echo from "laravel-echo"
+import Echo from "laravel-echo"
 
-// window.Echo = new Echo({
-//     broadcaster: 'pusher',
-//     key: 'your-pusher-key'
-// });
+window.Pusher = require('pusher-js');
+window.Echo = new Echo({
+    broadcaster: 'pusher',
+    authEndpoint: '/broadcast/broadcasting/auth',
+    key: 'fac9920b73163ff51b43',
+    cluster: 'ap1',
+    encrypted: true
+});
+
+window.Echo.private('mail')
+    .listen('MailSent', (e) => {
+        console.log(e);
+    });

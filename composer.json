@@ -8,7 +8,9 @@
         "php": ">=7.0.0",
         "laravel/framework": "5.5.*",
         "barryvdh/laravel-ide-helper": "^2.2",
-        "doctrine/dbal": "^2.6"
+        "doctrine/dbal": "^2.6",
+        "guzzlehttp/guzzle": "^6.3",
+        "pusher/pusher-php-server": "~3.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\TPC;
 
+use App\Mail\PaperNotify;
 use App\Model\Paper;
 use App\Model\Conference;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\Controller;
 
 class PapersController extends Controller
@@ -52,6 +54,21 @@ class PapersController extends Controller
         $paper->decision = 'Rejected';
         $paper->save();
         return redirect()->back()->with(['success' => 'Reject paper success!']);
+    }
+
+    public function notify($url = null, $paper_id) {
+        $paper = Paper::find($paper_id);
+        $paper->notify = true;
+        $paper->save();
+
+        $conf = $paper->conference;
+        Mail::to("tingtong003tomy@gmail.com")->queue(new PaperNotify($conf, $paper));
+//        Mail::to($paper->user->email)->queue(new PaperNotify($conf, $paper));
+//        return view('mails.notify', [
+//            "conf" => $conf,
+//            "paper" => $paper
+//        ]);
+        return redirect()->back();
     }
 
     private function getAvgAndBpp($papers) {
