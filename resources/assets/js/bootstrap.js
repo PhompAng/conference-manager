@@ -47,8 +47,3 @@ window.Echo = new Echo({
     cluster: 'ap1',
     encrypted: true
 });
-
-window.Echo.private('mail')
-    .listen('MailSent', (e) => {
-        console.log(e);
-    });

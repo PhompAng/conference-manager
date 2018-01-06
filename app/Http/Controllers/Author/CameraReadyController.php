@@ -83,6 +83,7 @@ class CameraReadyController extends Controller
         Storage::disk('local')->put($filename,  File::get($file));
 
         $paper->camera_ready = $filename;
+        //TODO change status
         $paper->save();
         return redirect($this->prefix.'/camera_ready')->with(['success' => 'Success!']);
     }

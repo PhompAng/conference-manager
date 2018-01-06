@@ -1,9 +1,19 @@
 @extends('home')
 @section('body')
-    @if(Session::has('success'))
-        <div class="alert alert-success"> {{Session::get('success')}} </div>
-    @endif
-
+    <div class="alert-container">
+        @if(Session::has('success'))
+            <div class="alert alert-success">
+                {{Session::get('success')}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+        @endif
+        @if(Session::has('info'))
+            <div class="alert alert-info" id="mail-sending">
+                <i class='fa fa-circle-o-notch fa-spin'></i> Sending Mail...
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+        @endif
+    </div>
     <table class="table table-hover table-bordered">
         <thead>
         <tr>
@@ -98,12 +108,16 @@
                 </td>
                 <td>
                     @if($paper->notify != null)
-                        {{$paper->notify}}
+                        <p>True</p>
+
+                        @if(Auth::user()->can('tpc'))
+                            <form class="notify" action="{{URL::route('paper.notify', ["url"=>$prefix, "paper_id" => $paper->id])}}" method="post">
+                                {!! csrf_field() !!}
+                                <button type="submit" class="btn btn-primary btn-xs">Notify</button>
+                            </form>
+                        @endif
+                    @else
                     @endif
-                    <form action="{{URL::route('paper.notify', ["url"=>$prefix, "paper_id" => $paper->id])}}" method="post">
-                        {!! csrf_field() !!}
-                        <button type="submit" class="btn btn-primary btn-xs">Notify</button>
-                    </form>
                 </td>
                 <td>
                     @can('review', $paper)
@@ -203,4 +217,14 @@
         @endforeach
         </tbody>
     </table>
+@endsection
+
+@section('script')
+    <script>
+        window.Echo.private('mail')
+            .listen('MailSent', (e) => {
+                $("#mail-sending").alert('close');
+                $(".alert-container").append('<div class="alert alert-success" id="mail-success">Send mail Success!\n<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>')
+            });
+    </script>
 @endsection

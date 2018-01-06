@@ -43,6 +43,7 @@ class PapersController extends Controller
         $this->authorize('decision', $paper);
 
         $paper->decision = 'Accepted';
+        //TODO change status
         $paper->save();
         return redirect()->back()->with(['success' => 'Accept paper success!']);
     }
@@ -52,6 +53,7 @@ class PapersController extends Controller
         $this->authorize('decision', $paper);
 
         $paper->decision = 'Rejected';
+        //TODO change status
         $paper->save();
         return redirect()->back()->with(['success' => 'Reject paper success!']);
     }
@@ -68,7 +70,7 @@ class PapersController extends Controller
 //            "conf" => $conf,
 //            "paper" => $paper
 //        ]);
-        return redirect()->back();
+        return redirect()->back()->with(['info' => 'Sending Mail...']);
     }
 
     private function getAvgAndBpp($papers) {
