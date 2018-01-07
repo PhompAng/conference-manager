@@ -12,9 +12,9 @@
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
-    <link href="/css/style.css" rel="stylesheet">
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 
 
@@ -40,9 +40,15 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url($prefix.'/') }}">
-                        {{ $conf->name }}
-                    </a>
+                    @if(Storage::disk('public')->exists($conf->url.'/'.$conf->banner))
+                        <a class="navbar-brand" href="{{ url($prefix.'/') }}" style="padding: 0;">
+                            <img src="{{'/storage/'.$conf->url.'/'.$conf->banner}}" style="height: 60px;" alt="">
+                        </a>
+                    @else
+                        <a class="navbar-brand" href="{{ url($prefix.'/') }}">
+                            {{ $conf->name }}
+                        </a>
+                    @endif
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
