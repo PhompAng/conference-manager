@@ -64,8 +64,8 @@ class PapersController extends Controller
         $paper->save();
 
         $conf = $paper->conference;
-        Mail::to("tingtong003tomy@gmail.com")->queue(new PaperNotify($conf, $paper));
-//        Mail::to($paper->user->email)->queue(new PaperNotify($conf, $paper));
+//        Mail::to("tingtong003tomy@gmail.com")->queue(new PaperNotify($conf, $paper));
+        Mail::to($paper->user->email)->queue(new PaperNotify($conf, $paper));
 //        return view('mails.notify', [
 //            "conf" => $conf,
 //            "paper" => $paper
