@@ -47,7 +47,7 @@ class PaperController extends Controller
             'area' => 'required|max:255',
             'topics.*' => 'required|max:255',
             'presentation' => 'in:1,2',
-            'file' => 'required|max:10000000|mimes:pdf',
+            'file' => 'max:10000000|mimes:pdf',
         ]);
     }
 
@@ -86,7 +86,7 @@ class PaperController extends Controller
         $paper->conference()->associate($conf);
         $paper->save();
 
-        return redirect($this->prefix.'/list')->with(['success' => 'Success!']);
+        return redirect($this->prefix.'/my_submission')->with(['success' => 'Success!']);
     }
 
     public function index($url=null) {
@@ -132,13 +132,15 @@ class PaperController extends Controller
         $paper->update($data);
 
         $file = $request->file('file');
-        $filename = $this->prefix . "/" . $user->id . "/" . $paper->id . "_" . str_random(10).'.pdf';
-        Storage::disk('local')->put($filename,  File::get($file));
+        if ($file != null) {
+            $filename = $this->prefix . "/" . $user->id . "/" . $paper->id . "_" . str_random(10).'.pdf';
+            Storage::disk('local')->put($filename,  File::get($file));
 
-        $paper->file = $filename;
+            $paper->file = $filename;
+        }
         $paper->save();
 
-        return redirect($this->prefix.'/list')->with(['success' => 'Success!']);
+        return redirect($this->prefix.'/my_submission')->with(['success' => 'Success!']);
     }
 
     public function destroy(Request $request, $url, $id) {
