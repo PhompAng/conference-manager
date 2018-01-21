@@ -31,7 +31,7 @@ class PaperListController extends Controller
 
         return view('reviewer.list', [
             "prefix" => $this->prefix,
-            "menu" => "list",
+            "menu" => "review_list",
             "title" => "Paper List",
             "conf" => $conf,
             "papers" => $papers,

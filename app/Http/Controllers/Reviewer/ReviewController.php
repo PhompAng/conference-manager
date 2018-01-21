@@ -41,7 +41,7 @@ class ReviewController extends Controller
 
         return view('reviewer.review.index', [
             "prefix" => $this->prefix,
-            "menu" => "list",
+            "menu" => "review_list",
             "title" => "Review of Paper " . $paper->id . ": ".$paper->title,
             "conf" => $conf,
             "reviews" => $reviewers]);
@@ -60,7 +60,7 @@ class ReviewController extends Controller
         $conf = Conference::where('url', $this->prefix)->first();
         return view('reviewer.review.create', [
             "prefix" => $this->prefix,
-            "menu" => "list",
+            "menu" => "review_list",
             "title" => "Review Paper " . $paper->id . ": ".$paper->title,
             "conf" => $conf,
             "paper" => $paper]);
@@ -86,7 +86,7 @@ class ReviewController extends Controller
                 ->back()
                 ->with([
                     "prefix" => $this->prefix,
-                    "menu" => "list",
+                    "menu" => "review_list",
                     "title" => "Review Paper " . $paper->id . ": ".$paper->title,
                     "conf" => $conf,
                     "paper" => $paper])

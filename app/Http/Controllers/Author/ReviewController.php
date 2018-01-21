@@ -27,7 +27,7 @@ class ReviewController extends Controller
 
         return view('author.review.index', [
             "prefix" => $this->prefix,
-            "menu" => "list",
+            "menu" => "my_submission",
             "title" => "Review of Paper " . $paper->id . ": ".$paper->title,
             "conf" => $conf,
             "reviews" => $reviewers]);

@@ -31,7 +31,7 @@ class PapersController extends Controller
 
         return view('tpc.papers', [
             "prefix" => $this->prefix,
-            "menu" => "list",
+            "menu" => "papers",
             "title" => "Paper List",
             "conf" => $conf,
             "papers" => $papers,

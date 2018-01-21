@@ -40,19 +40,12 @@
                         </ul>
                     </li>
                 @endif
-                @if (Auth::user()->can('reviewer') || Auth::user()->can('tpc'))
-                    <li role="presentation" class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                            Review Process <span class="caret"></span>
+                @if (Auth::user()->can('reviewer'))
+                    <li role="presentation"
+                        class="{{ $menu == "review_list" ? "active":"" }}">
+                        <a href="{{URL($prefix."/review_list")}}">
+                            My Review
                         </a>
-                        <ul class="dropdown-menu">
-                            <li role="presentation"
-                                class="{{ $menu == "list" ? "active":"" }}">
-                                <a href="{{URL($prefix."/review_list")}}">
-                                    My Review
-                                </a>
-                            </li>
-                        </ul>
                     </li>
                 @endif
                 @if(Auth::user()->can('tpc'))
@@ -62,8 +55,11 @@
                         </a>
                         <ul class="dropdown-menu">
                             {{--<li role="presentation" class="{{ $menu == "report" ? "active":"" }}"><a href="{{URL($prefix."/list")}}">Report</a></li>--}}
+
+                            <span class="section">Paper and Authors</span>
+                            <hr>
                             <li role="presentation"
-                                class="{{ $menu == "author" ? "active":"" }}">
+                                class="{{ $menu == "papers" ? "active":"" }}">
                                 <a href="{{URL($prefix."/papers")}}">
                                     Papers
                                 </a>
@@ -74,10 +70,18 @@
                                     Authors
                                 </a>
                             </li>
+                            <span class="section">Review Process</span>
+                            <hr>
                             <li role="presentation"
                                 class="{{ $menu == "reviewer" ? "active":"" }}">
                                 <a href="{{URL($prefix."/reviewer")}}">
                                     Reviewers
+                                </a>
+                            </li>
+                            <li role="presentation"
+                                class="{{ $menu == "review_list" ? "active":"" }}">
+                                <a href="{{URL($prefix."/review_list")}}">
+                                    My Review
                                 </a>
                             </li>
                         </ul>

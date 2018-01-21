@@ -5,3 +5,9 @@
 .navbar-brand > img {
     height: 60px;
 }
+ul > .section {
+    color: #3498db;
+}
+ul > hr {
+    margin: 0;
+}
