@@ -43,13 +43,13 @@
                 @if (Auth::user()->can('reviewer') || Auth::user()->can('tpc'))
                     <li role="presentation" class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                            My Review <span class="caret"></span>
+                            Review Process <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
                             <li role="presentation"
                                 class="{{ $menu == "list" ? "active":"" }}">
-                                <a href="{{URL($prefix."/list")}}">
-                                    Paper List
+                                <a href="{{URL($prefix."/review_list")}}">
+                                    My Review
                                 </a>
                             </li>
                         </ul>

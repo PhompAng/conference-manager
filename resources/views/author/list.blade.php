@@ -32,10 +32,14 @@
                         <span>{{$paper->updated_at}}</span>
                     </td>
                     <td class="text-center">
-                        {{$paper->status}}
+                        @if($paper->status == 'pending')
+                            Waiting for review
+                        @else
+                            {{$paper->status}}
+                        @endif
                         <br>
                         @if($paper->status != "withdraw")
-                            <a href="{{URL::route('review.index', ['url' => $prefix, 'paper_id' => $paper->id])}}" class="btn btn-primary btn-sm">View comments</a>
+                            <a href="{{URL::route('author_review.index', ['url' => $prefix, 'paper_id' => $paper->id])}}" class="btn btn-primary btn-sm">View comments</a>
                         @endif
                     </td>
                     <td style="vertical-align: middle;">

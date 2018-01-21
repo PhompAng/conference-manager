@@ -42,9 +42,15 @@ Route::group(['prefix' => '{url}'], function () {
             'as' => 'camera_ready.index',
             'uses' => 'Author\CameraReadyController@index'
         ]);
+
+        Route::get('/{paper_id}/author_review', [
+            'as' => 'author_review.index',
+            'uses' => 'Author\ReviewController@index'
+        ]);
     });
 
     Route::group(['middleware' => 'can:reviewer'], function() {
+        Route::get('/review_list', 'PaperListController@reviewList');
         Route::resource('/{paper_id}/review', 'Reviewer\ReviewController');
         Route::post('/review/{paper_id}/{user_id}/assign', [
             'as' => 'review.assign',
@@ -77,13 +83,11 @@ Route::group(['prefix' => '{url}'], function () {
     });
 
     Route::group(['middleware' => 'can:reviewer,tpc'], function () {
-        Route::get('/list', 'PaperListController@index');
+        Route::get('/{paper_id}/review', [
+            'as' => 'review.index',
+            'uses' => 'Reviewer\ReviewController@index'
+        ]);
     });
-
-    Route::get('/{paper_id}/review', [
-        'as' => 'review.index',
-        'uses' => 'Reviewer\ReviewController@index'
-    ]);
     Route::get('/my_submission', 'PaperListController@mySubmission');
     Route::get('/{user_id}/{file}', [
         'as' => 'getPaper',

@@ -97,7 +97,7 @@ class ReviewController extends Controller
         $data['score'] = json_encode($data['score'], JSON_UNESCAPED_UNICODE);
 
         $paper->reviewers()->updateExistingPivot($user->id, $data);
-        return redirect($this->prefix.'/list')->with(['success' => 'Review Success!']);
+        return redirect($this->prefix.'/review_list')->with(['success' => 'Review Success!']);
     }
 
     /**

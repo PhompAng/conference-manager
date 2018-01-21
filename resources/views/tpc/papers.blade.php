@@ -50,7 +50,11 @@
                     <span>{{$paper->updated_at}}</span>
                 </td>
                 <td class="text-center">
-                    {{$paper->status}}
+                    @if($paper->status == 'pending')
+                        Waiting for review
+                    @else
+                        {{$paper->status}}
+                    @endif
                     @if($paper->status != 'withdraw')
                         <br>
                         Avg: {{$paper['avg']}} BestPP: {{$paper['bpp']}}
@@ -109,25 +113,26 @@
                 <td>
                     @if($paper->notify != null)
                         <p>True</p>
-
+                    @endif
+                    @if($paper->decision != null)
                         @if(Auth::user()->can('tpc'))
                             <form class="notify" action="{{URL::route('paper.notify', ["url"=>$prefix, "paper_id" => $paper->id])}}" method="post">
                                 {!! csrf_field() !!}
                                 <button type="submit" class="btn btn-primary btn-xs">Notify</button>
                             </form>
                         @endif
-                    @else
                     @endif
                 </td>
                 <td>
                     @can('review', $paper)
-                        <span>
-                        <a href="{{URL::route('review.create', ["url"=>$prefix, "paper_id" => $paper->id])}}" class="btn btn-default btn-xs" data-toggle="tooltip"  title="Review">
-                            <i class="fa fa-comment" aria-hidden="true"></i>
-                        </a>
-                            {{-- TODO update review--}}
-                            Review
-                    </span>
+                        @if(!(\App\Model\Paper::isAlreadyReview($paper)))
+                            <span>
+                                <a href="{{URL::route('review.create', ["url"=>$prefix, "paper_id" => $paper->id])}}" class="btn btn-default btn-xs" data-toggle="tooltip"  title="Review">
+                                    <i class="fa fa-comment" aria-hidden="true"></i>
+                                </a>
+                                Review
+                            </span>
+                        @endif
                     @endcan
                     <br>
                     @can('assign', $paper)

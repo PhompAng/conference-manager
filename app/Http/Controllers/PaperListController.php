@@ -20,11 +20,14 @@ class PaperListController extends Controller
         $this->prefix = $request->segment(1);
     }
 
-    public function index($url=null) {
+    public function reviewList($url=null) {
         $conf = Conference::where('url', $this->prefix)->first();
-        $papers = Paper::where('conference_id', $conf->id)->get();
+        $papers = Paper::whereHas('reviewers', function($query) {
+            $user = Auth::user();
+            $query->where('user_id', $user->id);
+        })->where('conference_id', $conf->id)->get();
         $reviewers = $conf->users->where('role', '>=', 2);
-        $this->getAvgAndBpp($papers);
+//        $this->getAvgAndBpp($papers);
 
         return view('reviewer.list', [
             "prefix" => $this->prefix,
@@ -47,6 +50,7 @@ class PaperListController extends Controller
             "papers" => $papers]);
     }
 
+    //TODO update new algo
     private function getAvgAndBpp($papers) {
         for ($i=0;$i<count($papers);$i++) {
             $avg = 0;

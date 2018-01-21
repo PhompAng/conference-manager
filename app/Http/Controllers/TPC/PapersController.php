@@ -43,7 +43,7 @@ class PapersController extends Controller
         $this->authorize('decision', $paper);
 
         $paper->decision = 'Accepted';
-        //TODO change status
+        $paper->status = 'Accepted';
         $paper->save();
         return redirect()->back()->with(['success' => 'Accept paper success!']);
     }
@@ -53,7 +53,7 @@ class PapersController extends Controller
         $this->authorize('decision', $paper);
 
         $paper->decision = 'Rejected';
-        //TODO change status
+        $paper->status = 'Rejected';
         $paper->save();
         return redirect()->back()->with(['success' => 'Reject paper success!']);
     }
@@ -64,30 +64,44 @@ class PapersController extends Controller
         $paper->save();
 
         $conf = $paper->conference;
-//        Mail::to("tingtong003tomy@gmail.com")->queue(new PaperNotify($conf, $paper));
-        Mail::to($paper->user->email)->queue(new PaperNotify($conf, $paper));
+        Mail::to("tingtong003tomy@gmail.com")->send(new PaperNotify($conf, $paper));
+//        Mail::to($paper->user->email)->queue(new PaperNotify($conf, $paper));
 //        return view('mails.notify', [
 //            "conf" => $conf,
 //            "paper" => $paper
 //        ]);
-        return redirect()->back()->with(['info' => 'Sending Mail...']);
+        return redirect()->back()->with(['success' => 'Send Success']);
     }
 
     private function getAvgAndBpp($papers) {
         for ($i=0;$i<count($papers);$i++) {
             $avg = 0;
             $bpp = 0;
+            $count = 0;
             for ($j=0;$j<count($papers[$i]->reviewers);$j++) {
                 $papers[$i]->reviewers[$j]->pivot['score'] = json_decode($papers[$i]->reviewers[$j]->pivot->score, true);
                 if (isset($papers[$i]->reviewers[$j]->pivot['score'])) {
-                    $avg += $papers[$i]->reviewers[$j]->pivot['score']['4.1'];
+                    $score = 0;
+                    $score += $papers[$i]->reviewers[$j]->pivot['score']['1.1'];
+                    $score += $papers[$i]->reviewers[$j]->pivot['score']['1.2'];
+                    $score += $papers[$i]->reviewers[$j]->pivot['score']['2.1'];
+                    $score += $papers[$i]->reviewers[$j]->pivot['score']['2.2'];
+                    $score += $papers[$i]->reviewers[$j]->pivot['score']['2.3'];
+                    $score += $papers[$i]->reviewers[$j]->pivot['score']['2.4'];
+                    $score += $papers[$i]->reviewers[$j]->pivot['score']['2.5'];
+                    $score += $papers[$i]->reviewers[$j]->pivot['score']['2.6'];
+                    $score += $papers[$i]->reviewers[$j]->pivot['score']['3.1'];
+                    $score += $papers[$i]->reviewers[$j]->pivot['score']['3.2'];
+                    $score = $score / 10;
+                    $avg += $score;
+                    $count += 1;
                 }
                 if (isset($papers[$i]->reviewers[$j]->pivot['bpp_recommend']) && $papers[$i]->reviewers[$j]->pivot['bpp_recommend'] == 1) {
                     $bpp++;
                 }
             }
             if (count($papers[$i]->reviewers) != 0) {
-                $avg = $avg/count($papers[$i]->reviewers);
+                $avg = $avg/$count;
             } else {
                 $avg = 0;
             }

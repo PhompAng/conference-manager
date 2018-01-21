@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Paper extends Model
 {
@@ -26,6 +27,17 @@ class Paper extends Model
 
     public static function getAreaIndex($value) {
         return array_search($value->area, $value->conference->areas);
+    }
+
+    public static function isAlreadyReview($paper) {
+        $reviewers = $paper->reviewers;
+        $user = Auth::user();
+        foreach ($reviewers as $reviewer) {
+            if ($reviewer->id == $user->id && $reviewer->pivot->score != null) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public function user() {

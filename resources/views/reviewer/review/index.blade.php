@@ -9,7 +9,9 @@
         <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
             @foreach($reviews as $key=>$review)
                 <li role="presentation" class="{{$key==0 ? "active":""}}">
-                    <a href="#{{$key++}}" aria-controls="home" role="tab" data-toggle="tab">{{$key++}}</a>
+                    <a href="#{{$key++}}" aria-controls="home" role="tab" data-toggle="tab">
+                        {{$key++}}
+                        {{App\User::getFullName($review)}}</a>
                 </li>
             @endforeach
         </ul>
@@ -346,6 +348,15 @@
                                 </div>
                             </div>
 
+                            <p>5.3 Additional Comments to the editor (this comment is not transparent to the authors)</p>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <textarea id="comment_reviewer" class="form-control" rows="3" disabled>{{$review->pivot->comment_reviewer}}</textarea>
+
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
