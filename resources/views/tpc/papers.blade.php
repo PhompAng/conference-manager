@@ -24,6 +24,7 @@
             <th>Status</th>
             <th>Submitter</th>
             <th>Country</th>
+            <th>Reviewers</th>
             <th>Decision</th>
             <th>Notify</th>
             <th>Action</th>
@@ -51,19 +52,25 @@
                 </td>
                 <td class="text-center">
                     @if($paper->status == 'pending')
-                        Waiting for review
+                        <p>Waiting for review</p>
                     @else
-                        {{$paper->status}}
+                        <p>{{$paper->status}}</p>
                     @endif
                     @if($paper->status != 'withdraw')
+                        <span>Avg={{$paper['avg']}}</span>
                         <br>
-                        Avg: {{$paper['avg']}} BestPP: {{$paper['bpp']}}
+                        <span>BestPP={{$paper['bpp']}}</span>
                         <br>
+                        <p>
+                            @foreach($paper['avgs'] as $avg)
+                                [{{$avg}}]
+                            @endforeach
+                        </p>
                         <span>
-                        <a href="{{URL::route('review.index', ["url"=>$prefix, "paper_id" => $paper->id])}}" class="btn btn-primary btn-xs" data-toggle="tooltip"  title="Review">
-                            Details
-                        </a>
-                    </span>
+                            <a href="{{URL::route('review.index', ["url"=>$prefix, "paper_id" => $paper->id])}}" class="btn btn-primary btn-xs" data-toggle="tooltip"  title="Review">
+                                Details
+                            </a>
+                        </span>
                     @endif
                 </td>
                 <td class="text-center">
@@ -72,6 +79,13 @@
                     {{$paper->user->email}}
                 </td>
                 <td>{{$paper->user->country}}</td>
+                <td>
+                    <span>Assign={{$paper['total_reviewers']}}</span>
+                    <br>
+                    <span>Pending={{$paper['pending']}}</span>
+                    <br>
+                    <span>Complete={{$paper['complete']}}</span>
+                </td>
                 <td>
                     @if($paper->decision != null)
                         {{$paper->decision}}

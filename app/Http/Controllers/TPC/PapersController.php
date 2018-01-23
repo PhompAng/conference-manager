@@ -91,9 +91,12 @@ class PapersController extends Controller
         for ($i=0;$i<count($papers);$i++) {
             $avg = 0;
             $bpp = 0;
+            $total_reviewers = 0;
             $count = 0;
+            $avgs = array();
             for ($j=0;$j<count($papers[$i]->reviewers);$j++) {
                 $papers[$i]->reviewers[$j]->pivot['score'] = json_decode($papers[$i]->reviewers[$j]->pivot->score, true);
+                $total_reviewers += 1;
                 if (isset($papers[$i]->reviewers[$j]->pivot['score'])) {
                     $score = 0;
                     $score += $papers[$i]->reviewers[$j]->pivot['score']['1.1'];
@@ -107,6 +110,7 @@ class PapersController extends Controller
                     $score += $papers[$i]->reviewers[$j]->pivot['score']['3.1'];
                     $score += $papers[$i]->reviewers[$j]->pivot['score']['3.2'];
                     $score = $score / 10;
+                    $avgs[] = $score;
                     $avg += $score;
                     $count += 1;
                 }
@@ -114,13 +118,17 @@ class PapersController extends Controller
                     $bpp++;
                 }
             }
-            if (count($papers[$i]->reviewers) != 0) {
+            if ($count != 0) {
                 $avg = $avg/$count;
             } else {
                 $avg = 0;
             }
             $papers[$i]['avg'] = $avg;
             $papers[$i]['bpp'] = $bpp;
+            $papers[$i]['total_reviewers'] = $total_reviewers;
+            $papers[$i]['pending'] = $total_reviewers - $count;
+            $papers[$i]['complete'] = $count;
+            $papers[$i]['avgs'] = $avgs;
         }
     }
 }
