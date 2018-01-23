@@ -27,7 +27,7 @@ class PapersController extends Controller
         $conf = Conference::where('url', $this->prefix)->first();
         $papers = Paper::where('conference_id', $conf->id)->get();
         $reviewers = $conf->users->where('role', '>=', 2);
-        $this->getAvgAndBpp($papers);
+        $this->getReviewStatus($papers);
 
         return view('tpc.papers', [
             "prefix" => $this->prefix,
@@ -64,8 +64,8 @@ class PapersController extends Controller
         $paper->save();
 
         $conf = $paper->conference;
-        Mail::to("tingtong003tomy@gmail.com")->send(new PaperNotify($conf, $paper));
-//        Mail::to($paper->user->email)->queue(new PaperNotify($conf, $paper));
+//        Mail::to("tingtong003tomy@gmail.com")->send(new PaperNotify($conf, $paper));
+        Mail::to($paper->user->email)->send(new PaperNotify($conf, $paper));
 //        return view('mails.notify', [
 //            "conf" => $conf,
 //            "paper" => $paper
@@ -73,7 +73,21 @@ class PapersController extends Controller
         return redirect()->back()->with(['success' => 'Send Success']);
     }
 
-    private function getAvgAndBpp($papers) {
+    public function cameraReady($url = null)
+    {
+        $conf = Conference::where('url', $this->prefix)->first();
+        $papers = Paper::where('conference_id', $conf->id)->where('decision', 'Accepted')->get();
+        $this->getReviewStatus($papers);
+
+        return view('tpc.camera_ready', [
+            "prefix" => $this->prefix,
+            "menu" => "camera_ready",
+            "title" => "Camera Ready List",
+            "conf" => $conf,
+            "papers" => $papers]);
+    }
+
+    private function getReviewStatus($papers) {
         for ($i=0;$i<count($papers);$i++) {
             $avg = 0;
             $bpp = 0;

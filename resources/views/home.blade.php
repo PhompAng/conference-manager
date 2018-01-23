@@ -84,6 +84,12 @@
                                     My Review
                                 </a>
                             </li>
+                            <li role="presentation"
+                                class="{{ $menu == "camera_ready" ? "active":"" }}">
+                                <a href="{{URL($prefix."/papers/camera_ready")}}">
+                                    Camera Ready
+                                </a>
+                            </li>
                         </ul>
                     </li>
                 @endif

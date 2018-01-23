@@ -90,4 +90,8 @@ class Conference extends Model
     public function setConferenceEndDateAttribute($value) {
         $this->attributes['conference_end_date'] = Carbon::parse($value);
     }
+
+    public static function getFormattedDateTime($value) {
+        return is_null($value) ? null:Carbon::parse($value)->toDateTimeString();
+    }
 }

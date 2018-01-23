@@ -80,6 +80,10 @@ Route::group(['prefix' => '{url}'], function () {
             'as' => 'paper.notify',
             'uses' => 'TPC\PapersController@notify'
         ]);
+        Route::get('/papers/camera_ready', [
+            'as' => 'paper.camera_ready',
+            'uses' => 'TPC\PapersController@cameraReady'
+        ]);
     });
 
     Route::group(['middleware' => 'can:reviewer,tpc'], function () {
